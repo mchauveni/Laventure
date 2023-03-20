@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  .header__design {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    .header__design--first {
+      background-color: rgba(33, 131, 128, 0.5);
+      border: none;
+      border-radius: 10px;
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-right: 0.7rem;
+    }
+    .header__design--second {
+      background-color: rgba(33, 131, 128, 0.5);
+      border: none;
+      border-radius: 10px;
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.7rem;
+    }
+    .header__design--third {
+      background-color: rgba(33, 131, 128, 0.75);
+      border: none;
+      border-radius: 20px;
+      width: 3rem;
+      height: 1.7rem;
+      margin-right: 0.7rem;
+    }
+    .header__design--fourth {
+      background-color: var(--primary);
+      border: none;
+      border-radius: 15px;
+      width: 4rem;
+      height: 1.5rem;
+    }
+  }
+  .header__logo--img {
+    width: 7rem;
+  }
+}

@@ -1,0 +1,34 @@
+.main__search {
+  margin: auto;
+  display: flex;
+  border: none;
+  border-radius: 20px;
+  background-color: white;
+  width: 80vw;
+  height: 4rem;
+  margin-top: 1rem;
+  box-shadow: 5px 5px 19px -5px rgba(0, 0, 0, 0.75);
+}
+.main__search--icon {
+  margin-left: 10px;
+  padding: 0.5rem;
+  color: var(--sombre);
+  width: 8rem;
+  border: none;
+  border-radius: 20px;
+  background-color: white;
+}
+.main__search--input {
+  border: none;
+  font-size: 1.1rem;
+  padding-left: 1rem;
+  background-color: white;
+}
+.main__search--filter {
+  color: rgb(116, 116, 116);
+  padding: 0.5rem;
+  width: 8rem;
+  border: none;
+  border-radius: 20px;
+  background-color: white;
+}

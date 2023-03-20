@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+  background-color: var(--clair);
+}
+
+img {
+  max-width: 100%;
+}
+:root {
+  --primary: #218380;
+  --secondary: #a39ba8;
+  --third: #e2f1af;
+  --clair: #edf5fc;
+  --sombre: #272d2d;
+}

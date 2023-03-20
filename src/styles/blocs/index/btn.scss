@@ -1,0 +1,23 @@
+.main__btn {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  text-align: center;
+  align-items: center;
+}
+.main__btn--btn {
+  text-decoration: none;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--primary);
+  color: var(--clair);
+  width: 90%;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+.main__btn--mtn_legal {
+  text-decoration: none;
+  color: var(--sombre);
+  margin-top: 4rem;
+  font-size: 1.1rem;
+}

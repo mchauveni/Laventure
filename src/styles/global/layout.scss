@@ -1,18 +1,31 @@
+@font-face {
+  font-family: Jost;
+  src: url("/src/assets/fonts/jost_variable.ttf");
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   background-color: var(--clair);
+  //font-family: sans-serif;
+  font-family: var(--default-font);
 }
 
 img {
   max-width: 100%;
 }
+
 :root {
   --primary: #218380;
   --secondary: #a39ba8;
   --third: #e2f1af;
   --clair: #edf5fc;
+  --clair-transparent: #edf5fccc;
   --sombre: #272d2d;
+  --default-font: Jost;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
 }

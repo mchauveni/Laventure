@@ -1,17 +1,22 @@
+<script>
+  export let placeTitle;
+  export let placeLocation;
+  export let backgroundImageURL;
+</script>
 
-<div class="placeComponent">
-  <picture class="placeComponent__background">
-    <source type="image/webp" srcset="https://placeimg.com/640/480/nature" />
-    <source type="image/jpeg" srcset="https://placeimg.com/640/480/nature" />
-    <img src="https://placeimg.com/640/480/nature" alt="background_image"/>
-  </picture>
-
-  <h3 class="placeComponent__title">Lorem Ipsum</h3>
-  <div class="placeComponent__descriptionWrapper">
-    <picture class="placeComponent__locationIcon">
-      <source media="" srcset="/src/assets/img/location_icon.svg" />
-      <img alt="location_icon" />
-    </picture>
-    <p class="placeComponent__desc">Lorem</p>
+<div
+  class="placeComponent placeComponent__background"
+  style="background-image: url({backgroundImageURL});"
+>
+  <div class="placeComponent__descWrapper">
+    <h3 class="placeComponent__title">{placeTitle}</h3>
+    <div class="placeComponent__locationWrapper">
+      <img
+        class="placeComponent__locationIcon"
+        src="/src/assets/img/location_icon.svg"
+        alt="location_icon"
+      />
+      <p class="placeComponent__location">{placeLocation}</p>
+    </div>
   </div>
 </div>

@@ -42,12 +42,11 @@ function onMapClick(e) {
 }
 const markerXY = marker["_latlng"];
 const markerXY2 = marker2["_latlng"];
+const markerXY3 = marker3["_latlng"];
 const markerX = markerXY["lat"];
 const markerY = markerXY["lng"];
 
 var test = map.distance(markerXY, markerXY2);
-
-console.log(test);
 
 map.on("click", onMapClick);
 
@@ -65,6 +64,14 @@ var BigIcon = L.icon({
 /* Localisation */
 var watchId;
 
+let distance1;
+let distance2;
+let distance3;
+let distances;
+let value;
+let latitude;
+let longitude;
+
 function appendLocation(location, verb) {
   verb = verb || "updated";
   var Target = L.icon({
@@ -78,9 +85,14 @@ function appendLocation(location, verb) {
     popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
   });
 
-  var value = location["coords"];
-  var latitude = value["latitude"];
-  var longitude = value["longitude"];
+  value = location["coords"];
+  latitude = value["latitude"];
+  longitude = value["longitude"];
+  distances = [latitude, longitude];
+
+  distance1 = map.distance(markerXY, distances);
+  distance2 = map.distance(markerXY2, distances);
+  distance3 = map.distance(markerXY3, distances);
 
   var position = L.marker([latitude, longitude], { icon: Target }).addTo(map);
 
@@ -91,7 +103,14 @@ if ("geolocation" in navigator) {
   document.getElementById("askButton").addEventListener("click", function () {
     navigator.geolocation.getCurrentPosition(function (location) {
       appendLocation(location, "fetched");
+      distance1 = distance1;
+      // console.log(distance1);
+      distance2 = distance2;
+      // console.log(distance2);
+      distance3 = distance3;
+      // console.log(distance3);
     });
+
     watchId = navigator.geolocation.watchPosition(appendLocation);
   });
 }
@@ -101,7 +120,7 @@ marker.on("click", function (e) {
   title.innerHTML = "Abbaye d'Aliénor";
   emplacement.innerHTML = "Nieul-sur-l'Autise";
   img.src = "/src/assets/img/Nieul.webp";
-  distance.innerHTML = "Indisponible";
+  distance.innerHTML = distance1;
   marker3.setIcon(Icon);
   marker2.setIcon(Icon);
   marker.setIcon(BigIcon);
@@ -111,7 +130,7 @@ marker2.on("click", function (e) {
   title.innerHTML = "Embarcadère de maillezais";
   emplacement.innerHTML = "Maillezais";
   img.src = "/src/assets/img/embarcadere-abbaye-maillezais-1.webp";
-  distance.innerHTML = "Indisponible";
+  distance.innerHTML = distance2;
   marker.setIcon(Icon);
   marker3.setIcon(Icon);
   marker2.setIcon(BigIcon);
@@ -121,7 +140,7 @@ marker3.on("click", function (e) {
   title.innerHTML = "IUT d'Angoulême";
   emplacement.innerHTML = "Angoulême";
   img.src = "/src/assets/img/iut.webp";
-  distance.innerHTML = "Indisponible";
+  distance.innerHTML = distance3;
   marker.setIcon(Icon);
   marker2.setIcon(Icon);
   marker3.setIcon(BigIcon);

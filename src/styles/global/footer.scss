@@ -1,6 +1,7 @@
 .footer {
   position: fixed;
   bottom: 0px;
+  left: 0px;
   display: flex;
   justify-content: space-around;
   background-color: var(--primary);
@@ -9,4 +10,22 @@
   border: none;
   border-radius: 20px 20px 0px 0px;
   text-decoration: none;
+}
+
+.link {
+  position: fixed;
+  bottom: 0px;
+  left: 20.6rem;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--third);
+}
+
+.footer__icon {
+  --fill-color: var(--secondary);
+}
+
+.footer__icon--active {
+  --fill-color: var(--third);
 }

@@ -2,20 +2,13 @@
   import { onMount } from "svelte";
 
   export let active;
-  let query = ".footer__icon--" + active;
-
-  onMount(() => {
-    let activeIcon = document.querySelector(query);
-    if (activeIcon) {
-      activeIcon.classList.add("footer__icon--active");
-    }
-  });
 </script>
 
 <footer class="footer">
   <a class="footer__link" href="/src/pages/home.html">
     <svg
       class="footer__icon footer__icon--home"
+      class:footer__icon--active={active === "home"}
       width="27"
       height="30"
       viewBox="0 0 27 30"
@@ -30,6 +23,7 @@
   <a class="footer__link" href="/src/pages/map.html">
     <svg
       class="footer__icon footer__icon--map"
+      class:footer__icon--active={active === "map"}
       width="26"
       height="32"
       viewBox="0 0 26 32"
@@ -44,6 +38,7 @@
   <a class="footer__link" href="/src/pages/liste.html">
     <svg
       class="footer__icon footer__icon--list"
+      class:footer__icon--active={active === "list"}
       width="30"
       height="30"
       viewBox="0 0 30 30"
@@ -60,6 +55,7 @@
   <a class="footer__link" href="/src/pages/like.html">
     <svg
       class="footer__icon footer__icon--like"
+      class:footer__icon--active={active === "like"}
       width="37"
       height="33"
       viewBox="0 0 37 33"

@@ -1,15 +1,47 @@
 .placeComponent {
+    width: 10rem;
     aspect-ratio: 1 / 1;
-    width: 30rem;
-    position: relative;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 20px;
     color: var(--clair);
-}
-
-.placeComponent__locationIcon {
-    fill: var(--clair);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .placeComponent__background {
-    position: absolute;
-    z-index: -1;
+    background-size: cover;
+    background-position: center;
+}
+
+.placeComponent__descWrapper {
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 15px;
+    background-color: var(--clair-transparent);
+    color: var(--sombre);
+}
+
+.placeComponent__locationWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeComponent__title {
+    margin-bottom: 0.25rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.placeComponent__locationIcon {
+    //fill: var(--clair);
+    max-height: 1.5rem;
+}
+
+.placeComponent__location {
+    font-size: 0.85rem;
 }

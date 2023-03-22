@@ -1,11 +1,15 @@
 <script>
+  import { onMount } from "svelte";
+
   export let active;
   let query = ".footer__icon--" + active;
 
-  let activeIcon = document.querySelector(query);
-  if (activeIcon) {
-    activeIcon.classList.add("active");
-  }
+  onMount(() => {
+    let activeIcon = document.querySelector(query);
+    if (activeIcon) {
+      activeIcon.classList.add("footer__icon--active");
+    }
+  });
 </script>
 
 <footer class="footer">

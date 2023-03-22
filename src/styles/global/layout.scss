@@ -17,6 +17,14 @@ img {
   max-width: 100%;
 }
 
+.page {
+  display: none;
+}
+
+.page.visible {
+  display: block;
+}
+
 :root {
   --primary: #218380;
   --secondary: #a39ba8;
@@ -29,6 +37,7 @@ img {
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 }
+
 .d-none {
   display: none !important;
 }

@@ -5,6 +5,7 @@
       "placeX": "45.6534007",
       "placeY": "0.1147556",
       "namePlace": "Angoulême",
+      "imgSrc": "/src/assets/img/musee_papier.webp",
       "description": " Le Musée du Papier est installé depuis 1988 dans les anciennes papeteries Lacroix devenues papeteries Joseph Bardou «Le Nil» jusqu’à leurs fermetures en 1972. Il pérennise le riche passé industriel angoumoisin lié au papier et aux industries connexes. Rénovés à partir de 1983, les bâtiments du musée sont construits sur le fleuve et forment un pont, allant de la rue de Bordeaux jusqu’à l’île de Saint-Cybard. Dans les salles du «rez-de-Charente», un centre d’interprétation est consacré à l’artisanat et à l’industrie liés au fleuve. À l’étage, les expositions temporaires présentent la variété des collections."
     },
     {
@@ -12,6 +13,7 @@
       "placeX": "45.6485409",
       "placeY": "0.148809",
       "namePlace": "Angoulême",
+      "imgSrc": "/src/assets/img/musee_angouleme.webp",
       "description": "Installé au chevet de la cathédrale, dans l’ancien évêché, le Musée d’Angoulême s’articule autour de trois collections élaborées au fil de son histoire. Deux d’entre elles, d’importance internationale, la collection des arts d’Afrique et d’Océanie et la collection d’Archéologie, permettent d’évoquer respectivement la diversité des cultures de part le monde et les temps originels, des dinosaures à l’époque médiévale. La collection des arts occidentaux présente un ensemble d’oeuvres peintes ou sculptées, ainsi qu’une sélection de céramiques allant du XVIe au XXe siècle."
     },
     {
@@ -19,6 +21,7 @@
       "placeX": "45.6476703",
       "placeY": "0.1359281",
       "namePlace": "Angoulême",
+      "imgSrc": "/src/assets/img/iut.webp",
       "description": "Etudier à l’IUT d’Angoulême, c’est intégrer un établissement d’enseignement supérieur et de recherche à taille humaine, bien implanté sur son territoire et auprès des entreprises locales. L’IUT d’Angoulême dispense des formations professionalisantes dans les domaines de l’industrie (mécanique, électronique) et des services (commerce, multimédia, qualité et logistique)."
     },
     {
@@ -26,6 +29,7 @@
       "placeX": "45.6507566",
       "placeY": "0.3073136",
       "namePlace": "Chazelles",
+      "imgSrc": "/src/assets/img/grotte_queroy.webp",
       "description": "Il s'agit de grottes naturelles, formées dans le calcaire jurassique fissuré du karst de La Rochefoucauld il y a 12 millions d'années, par les eaux de la Touvre qui coule maintenant 80 mètres en contrebas1. À la surface du sol, au milieu du bois de chênes, on peut deviner un lapiaz, couvert parfois d'une fine couche de terre."
     },
     {
@@ -33,6 +37,7 @@
       "placeX": "45.6992043",
       "placeY": "-0.3353328",
       "namePlace": "Cognac",
+      "imgSrc": "/src/assets/img/cognac.webp",
       "description": "Le Château de Cognac fut sous la propriété d’un certain baron Otard à partir de 1795, et put ainsi échapper à sa destruction durant les temps sombres de la Révolution. Ce lieu a tout de suite séduit le baron, par son patrimoine unique, mais aussi par les conditions exceptionnelles de vieillissement qu’il avait à disposition pour ses eaux-de-vie, grâce à l’épaisseur des murs du Château."
     }
   ]

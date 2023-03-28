@@ -6,10 +6,16 @@
   import Map from "./lib/Map.svelte";
   import PlaceComponent from "./lib/PlaceComponent.svelte";
 
-  let pageState = "map";
+  import { pageState } from "./lib/stores";
+
+  let pageStateValue;
+
+  pageState.subscribe(value => {
+		pageStateValue = value;
+	});
 </script>
 
-<div class="page" class:visible={pageState === "index"}>
+<div class="page" class:visible={pageStateValue === "index"}>
   <header class="header">
     <section class="header__design">
       <div class="header__design--first" />
@@ -52,18 +58,18 @@
   </main>
 </div>
 
-<div class="page" class:visible={pageState === "home"}>
+<div class="page" class:visible={pageStateValue === "home"}>
   <Home />
 </div>
 
-<div class="page" class:visible={pageState === "map"}>
+<div class="page" class:visible={pageStateValue === "map"}>
   <Map />
 </div>
 
-<div class="page" class:visible={pageState === "list"}>
+<div class="page" class:visible={pageStateValue === "list"}>
   <List />
 </div>
 
-<div class="page" class:visible={pageState === "like"}>
+<div class="page" class:visible={pageStateValue === "like"}>
   <Like />
 </div>

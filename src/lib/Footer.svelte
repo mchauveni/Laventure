@@ -1,11 +1,10 @@
 <script>
-  import { onMount } from "svelte";
-
+  import { pageState } from "./stores.js";
   export let active;
 </script>
 
 <footer class="footer">
-  <a class="footer__link" href="/src/pages/home.html">
+  <a class="footer__link" href="/src/pages/home.html" on:click|preventDefault={() => pageState.set("home")}>
     <svg
       class="footer__icon footer__icon--home"
       class:footer__icon--active={active === "home"}
@@ -20,7 +19,7 @@
       />
     </svg>
   </a>
-  <a class="footer__link" href="/src/pages/map.html">
+  <a class="footer__link" href="/src/pages/map.html" on:click|preventDefault={() => pageState.set("map")}>
     <svg
       class="footer__icon footer__icon--map"
       class:footer__icon--active={active === "map"}
@@ -35,7 +34,7 @@
       />
     </svg>
   </a>
-  <a class="footer__link" href="/src/pages/liste.html">
+  <a class="footer__link" href="/src/pages/liste.html" on:click|preventDefault={() => pageState.set("list")}>
     <svg
       class="footer__icon footer__icon--list"
       class:footer__icon--active={active === "list"}
@@ -52,7 +51,7 @@
       />
     </svg>
   </a>
-  <a class="footer__link" href="/src/pages/like.html">
+  <a class="footer__link" href="/src/pages/like.html" on:click|preventDefault={() => pageState.set("like")}>
     <svg
       class="footer__icon footer__icon--like"
       class:footer__icon--active={active === "like"}

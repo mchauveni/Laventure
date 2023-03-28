@@ -12,7 +12,7 @@
   <section class="header__logo">
     <img
       class="header__logo--img"
-      srcset="./../assets/img/Logo_type.png 400w"
+      srcset="/src/assets/img/Logo_type.png 400w"
       alt="Logo de notre application"
     />
   </section>

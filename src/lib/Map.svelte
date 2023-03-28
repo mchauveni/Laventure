@@ -47,11 +47,6 @@
     </div>
   </section>
 
-  <script
-    src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-    crossorigin=""
-  ></script>
-  <script src="./../scripts/map.js" type="module"></script>
+  <script src="/src/scripts/map.js" type="module"></script>
 </main>
 <Footer active="map" />

@@ -1,3 +1,5 @@
+import 'leaflet';
+
 const closemarker = document.querySelector(".leaflet-popup-close-button");
 const infos = document.querySelector(".popup");
 const closed = document.querySelector(".close");

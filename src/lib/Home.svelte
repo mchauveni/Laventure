@@ -1,6 +1,7 @@
 <script>
     import Footer from "./Footer.svelte";
     import { pageState, overlay } from "./stores";
+    import Places from "./PlaceComponent.svelte"
 
 </script>
 
@@ -37,7 +38,9 @@
                 <ul>Historique</ul>
             </li>
         </div>
-        <div class="discover__style" />
+        <div class="places__home">
+            <Places/>
+        </div>
     </section>
     <section class="discover" style="z-index:999;">
         <div class="discover__txt">

@@ -1,7 +1,7 @@
 import { writable } from "svelte/store";
 
 /* must be ["index", "home", "map", "list", "like"] */
-export const pageState = writable("map");
+export const pageState = writable("home");
 
 /* must be ["none", "loader", "focus"] */
 export const overlay = writable("none");

@@ -1,5 +1,6 @@
 <script>
   import Footer from "./Footer.svelte";
+  import Places from "./PlaceComponent.svelte"
 </script>
 
 <header class="header">
@@ -38,6 +39,9 @@
       />
     </svg>
   </section>
+  <div class="places__list">
+    <Places/>
+  </div>
 </main>
 
 <Footer active="list" />

@@ -24,8 +24,11 @@ var Icon = L.icon({
   shadowAnchor: [27, 72], // the same for the shadow
   popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
 });
-
-var map = L.map("map").setView([45.65, 0.135], 16);
+var map = L.map("map");
+map.on("load", function (ev) {
+  console.log("map loaded", this, ev);
+});
+map.setView([45.65, 0.135], 16);
 
 var marker = L.marker([alldatas[0].placeX, alldatas[0].placeY], {
   icon: Icon,
@@ -76,9 +79,6 @@ const markerXY5 = marker5["_latlng"];
 const markerX = markerXY["lat"];
 const markerY = markerXY["lng"];
 
-map.on("load", function (ev) {
-  console.log("map loaded", this, ev);
-});
 
 map.on("click", onMapClick);
 
@@ -217,3 +217,4 @@ closed.addEventListener("click", function () {
   marker4.setIcon(Icon);
   marker5.setIcon(Icon);
 });
+

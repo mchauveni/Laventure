@@ -1,6 +1,8 @@
 import "leaflet";
 
-import data from "/src/scripts/place.json" assert { type: "JSON" };
+import { mapLoaded } from "./../lib/stores";
+
+import data from "./place.json";
 
 let alldatas = data.places;
 
@@ -24,9 +26,17 @@ var Icon = L.icon({
   shadowAnchor: [27, 72], // the same for the shadow
   popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
 });
+
+let mapValue;
+
+mapLoaded.subscribe((value) => {
+  mapValue = value;
+});
+
 var map = L.map("map");
 map.on("load", function (ev) {
-  console.log("map loaded", this, ev);
+  mapLoaded.set(true);
+  console.log(mapLoaded);
 });
 map.setView([45.65, 0.135], 16);
 
@@ -54,12 +64,6 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 15,
 }).addTo(map);
 
-console.log(map.getZoom());
-
-map.setZoom(16);
-
-console.log(map.getZoom());
-
 var popup2 = L.popup();
 
 function onMapClick(e) {
@@ -78,7 +82,6 @@ const markerXY4 = marker4["_latlng"];
 const markerXY5 = marker5["_latlng"];
 const markerX = markerXY["lat"];
 const markerY = markerXY["lng"];
-
 
 map.on("click", onMapClick);
 
@@ -217,4 +220,3 @@ closed.addEventListener("click", function () {
   marker4.setIcon(Icon);
   marker5.setIcon(Icon);
 });
-

@@ -1,16 +1,7 @@
 <script>
     import Footer from "./Footer.svelte";
-    import { onMount } from "svelte";
     import { pageState, overlay } from "./stores";
 
-/*     onMount(() => {
-        const interval = setInterval(() => {
-            pageState.set("home");
-            overlay.set("none");
-        }, 500);
-
-        return () => clearInterval(interval);
-    }); */
 </script>
 
 <header class="header">

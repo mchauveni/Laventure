@@ -6,7 +6,7 @@
     import PlaceComponent from "./lib/PlaceComponent.svelte";
     import Loader from "./lib/Loader.svelte";
     import { fly } from "svelte/transition";
-    import { pageState, overlay } from "./lib/stores";
+    import { pageState, overlay, mapLoaded } from "./lib/stores";
 
     import heroimg from "/src/assets/img/original-c48f63577ee2eb3dd211ce7065d80b72-removebg-preview.png";
 
@@ -20,6 +20,24 @@
     overlay.subscribe((value) => {
         overlayValue = value;
     });
+
+    import { onMount } from "svelte";
+
+    let mapValue;
+
+    mapLoaded.subscribe((value) => {
+        mapValue = value;
+    });
+
+    if (mapLoaded){
+            onMount(() => {
+        const interval = setInterval(() => {
+                pageState.set("index");
+                overlay.set("none");
+            }, 1000);
+        return () => clearInterval(interval);
+    })  }
+
 </script>
 
 <div class="page" class:visible={overlayValue === "loader"} transition:fly={{ x: -200, duration: 1000 }}>

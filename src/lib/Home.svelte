@@ -1,16 +1,16 @@
 <script>
     import Footer from "./Footer.svelte";
     import { onMount } from "svelte";
-    import { pageState, overlay } from "./stores.js";
+    import { pageState, overlay } from "./stores";
 
-    onMount(() => {
+/*     onMount(() => {
         const interval = setInterval(() => {
             pageState.set("home");
             overlay.set("none");
         }, 500);
 
         return () => clearInterval(interval);
-    });
+    }); */
 </script>
 
 <header class="header">
@@ -21,7 +21,7 @@
         <div class="header__design--fourth" />
     </section>
     <section class="header__logo">
-        <img class="header__logo--img" srcset="/src/assets/img/Logo_type.png 400w" alt="Logo de notre application" />
+        <img class="header__logo--img" src="/src/assets/img/Logo_type.png" alt="Logo de notre application" />
     </section>
 </header>
 <main class="main">

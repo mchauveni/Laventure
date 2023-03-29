@@ -1,7 +1,5 @@
 import "leaflet";
-
-import { mapLoaded } from "./../lib/stores";
-
+import { pageState, mapLoaded, overlay } from "./../lib/stores";
 import data from "./place.json";
 
 let alldatas = data.places;
@@ -36,7 +34,8 @@ mapLoaded.subscribe((value) => {
 var map = L.map("map");
 map.on("load", function (ev) {
   mapLoaded.set(true);
-  console.log(mapLoaded);
+  pageState.set("index");
+  overlay.set('none')
 });
 map.setView([45.65, 0.135], 16);
 

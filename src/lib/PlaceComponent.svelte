@@ -2,8 +2,6 @@
   import data from "./../scripts/place.json"
 
   let allplaces = data.places;
-
-  console.log(allplaces)
 </script>
 
 
@@ -23,5 +21,6 @@
       <p class="placeComponent__location">{place.namePlace}</p>
     </div>
   </div>
+  <p class="localisationPlace" style="display:none;"> {place.placeX}, {place.placeY} </p>
 </div>
 {/each}

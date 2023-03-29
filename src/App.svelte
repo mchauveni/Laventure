@@ -29,14 +29,14 @@
         mapValue = value;
     });
 
-    if (mapLoaded){
-            onMount(() => {
-        const interval = setInterval(() => {
-                pageState.set("index");
-                overlay.set("none");
-            }, 1000);
-        return () => clearInterval(interval);
-    })  }
+    // if (mapLoaded){
+    //         onMount(() => {
+    //     const interval = setInterval(() => {
+    //             pageState.set("index");
+    //             overlay.set("none");
+    //         }, 1000);
+    //     return () => clearInterval(interval);
+    // })  }
 
 </script>
 

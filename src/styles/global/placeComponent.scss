@@ -1,47 +1,57 @@
+.places__home {
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+}
+.places__list {
+  display: grid;
+  grid-template-columns: repeat(2, 45vw);
+}
 .placeComponent {
-    width: 10rem;
-    aspect-ratio: 1 / 1;
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 20px;
-    color: var(--clair);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
+  width: 10rem;
+  aspect-ratio: 1 / 1;
+  margin: 1rem;
+  padding: 0.2rem;
+  border-radius: 20px;
+  color: var(--clair);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .placeComponent__background {
-    background-size: cover;
-    background-position: center;
+  background-size: cover;
+  background-position: center;
 }
 
 .placeComponent__descWrapper {
-    padding: 0.5rem;
-    width: 100%;
-    border-radius: 15px;
-    background-color: var(--clair-transparent);
-    color: var(--sombre);
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 15px;
+  background-color: var(--clair-transparent);
+  color: var(--sombre);
 }
 
 .placeComponent__locationWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .placeComponent__title {
-    margin-bottom: 0.25rem;
-    text-align: center;
-    font-weight: 700;
+  margin-bottom: 0.25rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.95rem;
 }
 
 .placeComponent__locationIcon {
-    //fill: var(--clair);
-    max-height: 1.5rem;
+  //fill: var(--clair);
+  max-height: 1.5rem;
 }
 
 .placeComponent__location {
-    font-size: 0.85rem;
+  font-size: 0.85rem;
 }

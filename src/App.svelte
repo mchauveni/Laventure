@@ -8,15 +8,15 @@
     import { fly } from "svelte/transition";
     import { pageState, overlay, mapLoaded } from "./lib/stores";
 
-    import heroimg from "/src/assets/img/original-c48f63577ee2eb3dd211ce7065d80b72-removebg-preview.png";
-
+    import heroimg from "/src/assets/img/hero_index_img.png";
+    import logo from "/src/assets/img/logo_type.png";
+    
     let pageStateValue;
-    let overlayValue;
-
     pageState.subscribe((value) => {
         pageStateValue = value;
     });
-
+    
+    let overlayValue;
     overlay.subscribe((value) => {
         overlayValue = value;
     });

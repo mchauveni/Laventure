@@ -6,5 +6,5 @@ export const pageState = writable("map");
 /* must be ["none", "loader", "focus"] */
 export const overlay = writable("none");
 
-/* must be ["none", "loader", "focus"] */
+/* is the map loaded ? */
 export const mapLoaded = writable(false);

@@ -1,0 +1,37 @@
+.focus {
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.focus__wrapper {
+    padding: 1.5rem;
+    padding-bottom: 100px;
+    background-color: var(--secondary);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.focus__header {
+    margin: 0.75rem 0;
+    border-bottom: 1px solid var(--clair);
+}
+
+.focus__headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.5rem;
+}
+
+.focus__title {
+    margin: 1rem 0 2rem 0;
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+}
+
+.focus__descriptionTitle {
+    margin: 1.25rem 0;
+    font-weight: var(--font-weight-bold);
+}

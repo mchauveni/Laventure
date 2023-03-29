@@ -5,7 +5,7 @@
   import Map from "./lib/Map.svelte";
   import PlaceComponent from "./lib/PlaceComponent.svelte";
   import Loader from "./lib/Loader.svelte";
-  import { fly } from "svelte/transition";
+  import Focus from "./lib/Focus.svelte";
   import { pageState, overlay, mapLoaded } from "./lib/stores";
 
   import heroimg from "/src/assets/img/hero_index_img.png";
@@ -21,19 +21,17 @@
     overlayValue = value;
   });
 
-  import { onMount } from "svelte";
-
   let mapLoadedValue;
   mapLoaded.subscribe((value) => {
     mapLoadedValue = value;
   });
 </script>
 
-<div
-  class="page"
-  class:visible={overlayValue === "loader"}
-  transition:fly={{ x: -200, duration: 1000 }}
->
+<div class="page" class:visible={overlayValue === "focus"}>
+  <Focus />
+</div>
+
+<div class="page" class:visible={overlayValue === "loader"}>
   <Loader />
 </div>
 

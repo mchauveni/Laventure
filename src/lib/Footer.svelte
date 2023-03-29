@@ -1,5 +1,5 @@
 <script>
-  import { pageState } from "./stores.js";
+  import { pageState } from "./stores";
   export let active;
 </script>
 

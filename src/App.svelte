@@ -8,6 +8,8 @@
     import { fly } from "svelte/transition";
     import { pageState, overlay } from "./lib/stores";
 
+    import heroimg from "/src/assets/img/original-c48f63577ee2eb3dd211ce7065d80b72-removebg-preview.png";
+
     let pageStateValue;
     let overlayValue;
 
@@ -46,9 +48,7 @@
         <section class="main__illustration">
             <img
                 class="main__illustration--img"
-                srcset="
-          ./src/assets/img/original-c48f63577ee2eb3dd211ce7065d80b72-removebg-preview.png 400w
-        "
+                src={heroimg}
                 alt="Illustration du voyage"
             />
         </section>

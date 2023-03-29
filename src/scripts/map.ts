@@ -217,3 +217,4 @@ closed.addEventListener("click", function () {
   marker4.setIcon(Icon);
   marker5.setIcon(Icon);
 });
+

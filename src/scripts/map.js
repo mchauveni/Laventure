@@ -51,6 +51,12 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 15,
 }).addTo(map);
 
+console.log(map.getZoom());
+
+map.setZoom(16);
+
+console.log(map.getZoom());
+
 var popup2 = L.popup();
 
 function onMapClick(e) {
@@ -69,6 +75,10 @@ const markerXY4 = marker4["_latlng"];
 const markerXY5 = marker5["_latlng"];
 const markerX = markerXY["lat"];
 const markerY = markerXY["lng"];
+
+map.on("load", function (ev) {
+  console.log("map loaded", this, ev);
+});
 
 map.on("click", onMapClick);
 
@@ -99,9 +109,7 @@ let longitude;
 function appendLocation(location, verb) {
   verb = verb || "updated";
   var Target = L.icon({
-    iconUrl: "./../assets/img/car.svg",
-    // shadowUrl: "./../assets/img/place.svg",
-
+    iconUrl: "src/assets/img/car.svg",
     iconSize: [35], // size of the icon
     shadowSize: [50, 64], // size of the shadow
     iconAnchor: [22, 69], // point of the icon which will correspond to marker's location

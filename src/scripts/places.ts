@@ -1,7 +1,4 @@
 export {};
-// const localisations = document
-//   .querySelector(".test")
-//   .querySelectorAll(".localisationPlace");
 const components = document
   .querySelector(".test")
   .querySelectorAll(".placeComponent");

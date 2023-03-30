@@ -28,6 +28,5 @@
         <p class="placeComponent__location">{place.namePlace}</p>
       </div>
     </div>
-  </div>
-</div>
+  </button>
 {/each}

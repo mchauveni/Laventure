@@ -14,7 +14,6 @@
     const dataName = data.name;
     const dataPlace = data.namePlace;
     (value = data.name), data.namePlace;
-    console.log(value);
   });
 </script>
 

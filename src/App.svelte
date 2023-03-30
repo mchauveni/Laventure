@@ -13,6 +13,7 @@
   let pageStateValue;
   pageState.subscribe((value) => {
     pageStateValue = value;
+    history.pushState(history.state, "", pageStateValue);
   });
 
   let overlayValue;

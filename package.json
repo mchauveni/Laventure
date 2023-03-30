@@ -21,8 +21,7 @@
   "dependencies": {
     "leaflet": "^1.9.3",
     "sass": "^1.59.3",
-    "svelte-search": "^2.0.1"
-    "sass": "^1.59.3",
+    "svelte-search": "^2.0.1",
     "svelte-gestures": "^1.4.1"
   }
 }

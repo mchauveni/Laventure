@@ -3,14 +3,12 @@
   import Like from "./lib/Like.svelte";
   import List from "./lib/List.svelte";
   import Map from "./lib/Map.svelte";
-  import PlaceComponent from "./lib/PlaceComponent.svelte";
   import Loader from "./lib/Loader.svelte";
   import Focus from "./lib/Focus.svelte";
-  import { fade, fly } from "svelte/transition";
+  import Header from "./lib/Header.svelte";
   import { pageState, overlay, mapLoaded } from "./lib/stores";
 
   import heroimg from "/src/assets/img/hero_index_img.png";
-  import logo from "/src/assets/img/logo_type.png";
 
   let pageStateValue;
   pageState.subscribe((value) => {
@@ -39,22 +37,9 @@
     <Loader />
   </div>
 {/if}
+
 <div class="page" class:visible={pageStateValue === "index"}>
-  <header class="header">
-    <section class="header__design">
-      <div class="header__design--first" />
-      <div class="header__design--second" />
-      <div class="header__design--third" />
-      <div class="header__design--fourth" />
-    </section>
-    <section class="header__logo">
-      <img
-        class="header__logo--img"
-        srcset={logo}
-        alt="Logo de notre application"
-      />
-    </section>
-  </header>
+  <Header />
   <main class="main">
     <section class="main__title">
       <h1>

@@ -1,9 +1,9 @@
 <script>
+  import logo from "/src/assets/img/logo_app.png";
 </script>
 
 <main class="loader__background">
-    <picture class="loader__logo">
-        <source srcset="/src/assets/img/Logo_type.png" media="" />
-        <img src="/src/assets/img/Logo_type.png" alt="application logo" />
-    </picture>
+  <picture class="loader__logo">
+    <img src={logo} alt="application logo" />
+  </picture>
 </main>

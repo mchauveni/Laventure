@@ -60,6 +60,7 @@
 }
 
 .focus__image {
+    position: relative;
     z-index: 8;
     height: 100%;
     width: 100%;
@@ -70,4 +71,11 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.focus__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    max-height: 3rem;
 }

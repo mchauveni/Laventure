@@ -19,7 +19,7 @@
 
 <main
   class="focus"
-  use:swipe={{ timeframe: 300, minSwipeDistance: 100, touchAction: "" }}
+  use:swipe={{ timeframe: 500, minSwipeDistance: 100, touchAction: "" }}
   on:swipe={onSwipe}
   transition:fly={{ y: 800, duration: 600 }}
 >
@@ -27,7 +27,15 @@
     class="focus__image"
     style="background-image: url({place.imgSrc});"
     transition:fly={{ y: 500, duration: 600 }}
-  />
+  >
+    <img
+      src="/src/assets/img/icons/close.svg"
+      alt=""
+      class="focus__close"
+      on:click|preventDefault={() => overlay.set("none")}
+      on:keydown={() => overlay.set("none")}
+    />
+  </div>
   <article class="focus__wrapper">
     <header class="focus__header">
       <div class="focus__headerContainer">

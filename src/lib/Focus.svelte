@@ -15,6 +15,13 @@
       overlay.set("none");
     }
   }
+
+  function liked(){
+    const likedPlaces = JSON.parse(localStorage.getItem('places')) || [];
+    likedPlaces.push(place.id);
+    localStorage.setItem('places', JSON.stringify(likedPlaces));
+  }
+
 </script>
 
 <main
@@ -40,7 +47,7 @@
     <header class="focus__header">
       <div class="focus__headerContainer">
         <h1 class="focus__title">{place.name}</h1>
-        <img src="/src/assets/img/icons/like_active.svg" alt="like icon" />
+        <img id="like" src="/src/assets/img/icons/like_active.svg" alt="like icon" on:click={liked} on:keydown={liked} />
       </div>
       <div class="focus__headerContainer">
         <div class="focus__location focus__iconWrapper">

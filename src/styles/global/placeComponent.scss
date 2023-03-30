@@ -3,11 +3,17 @@
   overflow: auto;
   white-space: nowrap;
 }
-.test > div {
+.hide > button {
   display: none;
 }
 .show {
   display: flex !important;
+}
+.delete__btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 8vw;
 }
 .places__list {
   display: grid;

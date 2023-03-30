@@ -1,6 +1,6 @@
 export {};
 const components = document
-  .querySelector(".test")
+  .querySelector(".hide")
   .querySelectorAll(".placeComponent");
 
 let test1;

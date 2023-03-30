@@ -1,6 +1,7 @@
 {
   "places": [
     {
+      "id": 1,
       "name": "Musée du Papier",
       "placeX": "45.6534007",
       "placeY": "0.1147556",
@@ -10,6 +11,7 @@
       "categorie": "Production"
     },
     {
+      "id": 2,
       "name": "Musée Angoulême",
       "placeX": "45.6485409",
       "placeY": "0.148809",
@@ -19,6 +21,7 @@
       "categorie": "Historique"
     },
     {
+      "id": 3,
       "name": "IUT d'Angoulême",
       "placeX": "45.6476703",
       "placeY": "0.1359281",
@@ -28,6 +31,7 @@
       "categorie": "Production"
     },
     {
+      "id": 4,
       "name": "Grottes du Quéroy",
       "placeX": "45.6507566",
       "placeY": "0.3073136",
@@ -37,6 +41,7 @@
       "categorie": "Nature"
     },
     {
+      "id": 5,
       "name": "Château de Cognac",
       "placeX": "45.6992043",
       "placeY": "-0.3353328",

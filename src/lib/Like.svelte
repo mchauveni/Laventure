@@ -1,5 +1,6 @@
 <script>
   import Footer from "./Footer.svelte";
+  import Places from "./PlaceComponent.svelte"
 </script>
 
 <header class="header">
@@ -38,5 +39,8 @@
       />
     </svg>
   </section>
+  <div class="places__list">
+    <Places showDeleteBtn={true}/>
+  </div>
 </main>
 <Footer active="like" />

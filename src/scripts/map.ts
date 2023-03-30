@@ -35,7 +35,7 @@ var map = L.map("map");
 map.on("load", function (ev) {
   mapLoaded.set(true);
   pageState.set("index");
-  overlay.set('none')
+  overlay.set("none");
 });
 map.setView([45.65, 0.135], 16);
 
@@ -85,7 +85,7 @@ const markerY = markerXY["lng"];
 map.on("click", onMapClick);
 
 var BigIcon = L.icon({
-  iconUrl: "src/assets/img/point_click.svg",
+  iconUrl: "src/assets/img/icons/point_click.svg",
   // shadowUrl: "./../../img/abeille_ombre.png",
 
   iconSize: [48], // size of the icon
@@ -111,7 +111,7 @@ let longitude;
 function appendLocation(location, verb) {
   verb = verb || "updated";
   var Target = L.icon({
-    iconUrl: "src/assets/img/car.svg",
+    iconUrl: "src/assets/img/icons/car.svg",
     iconSize: [35], // size of the icon
     shadowSize: [50, 64], // size of the shadow
     iconAnchor: [22, 69], // point of the icon which will correspond to marker's location

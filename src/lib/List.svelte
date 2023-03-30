@@ -1,23 +1,10 @@
 <script>
   import Footer from "./Footer.svelte";
-  import Places from "./PlaceComponent.svelte"
+  import Header from "./Header.svelte";
+  import Places from "./PlaceComponent.svelte";
 </script>
 
-<header class="header">
-  <section class="header__design">
-    <div class="header__design--first" />
-    <div class="header__design--second" />
-    <div class="header__design--third" />
-    <div class="header__design--fourth" />
-  </section>
-  <section class="header__logo">
-    <img
-      class="header__logo--img"
-      srcset="/src/assets/img/Logo_type.png 400w"
-      alt="Logo de notre application"
-    />
-  </section>
-</header>
+<Header />
 <main class="main">
   <h1 class="main__title">Que cherchez-vous ?</h1>
   <section class="main__search">
@@ -40,7 +27,7 @@
     </svg>
   </section>
   <div class="places__list">
-    <Places/>
+    <Places />
   </div>
 </main>
 

@@ -1,11 +1,18 @@
 .focus {
-    z-index: 1;
+    height: 100vh;
+    z-index: 10;
     position: fixed;
     bottom: 0;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .focus__wrapper {
+    z-index: 9;
+    max-height: 70vh;
     padding: 1.5rem;
     padding-bottom: 100px;
     background-color: var(--secondary);
@@ -31,7 +38,36 @@
     font-weight: var(--font-weight-bold);
 }
 
+.focus__iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.focus__icon {
+    max-height: 1.5rem;
+    margin-right: 0.5rem;
+}
+
 .focus__descriptionTitle {
     margin: 1.25rem 0;
     font-weight: var(--font-weight-bold);
+}
+
+.focus__description {
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.focus__image {
+    z-index: 8;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transform: translateY(2rem);
+    display: block;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }

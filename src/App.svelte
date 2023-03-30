@@ -6,6 +6,7 @@
   import PlaceComponent from "./lib/PlaceComponent.svelte";
   import Loader from "./lib/Loader.svelte";
   import Focus from "./lib/Focus.svelte";
+  import { fade, fly } from 'svelte/transition';
   import { pageState, overlay, mapLoaded } from "./lib/stores";
 
   import heroimg from "/src/assets/img/hero_index_img.png";
@@ -27,14 +28,19 @@
   });
 </script>
 
+
+
+{#if overlayValue === "focus"}
 <div class="page" class:visible={overlayValue === "focus"}>
   <Focus />
 </div>
+{/if}
 
+{#if overlayValue === "loader"}
 <div class="page" class:visible={overlayValue === "loader"}>
   <Loader />
 </div>
-
+{/if}
 <div class="page" class:visible={pageStateValue === "index"}>
   <header class="header">
     <section class="header__design">

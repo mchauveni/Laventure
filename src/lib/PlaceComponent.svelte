@@ -3,6 +3,8 @@
   import { overlay, focusData } from "./stores";
   let allplaces = data.places;
 
+  export let showDeleteBtn = false;
+
   function placeClick(place) {
     overlay.set("focus");
     focusData.set(place);
@@ -18,6 +20,9 @@
     }}
   >
     <div class="placeComponent__descWrapper">
+      {#if { showDeleteBtn }}
+        <img src="" alt="" />
+      {/if}
       <h3 class="placeComponent__title">{place.name}</h3>
       <div class="placeComponent__locationWrapper">
         <img

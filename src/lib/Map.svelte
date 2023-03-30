@@ -1,6 +1,9 @@
 <script>
   import Footer from "./Footer.svelte";
   import Header from "./Header.svelte";
+  import placeIcon from "/src/assets/img/icons/place.svg";
+  import distanceIcon from "/src/assets/img/icons/distance.svg";
+  import playIcon from "/src/assets/img/icons/play.svg";
 </script>
 
 <Header />
@@ -19,16 +22,16 @@
       <div class="popup__txt">
         <h2 class="popup__txt--title" />
         <div class="popup__txt--place">
-          <img src="/src/assets/img/icons/place.svg" alt="" />
+          <img src={placeIcon} alt="" />
           <h3 id="place" />
         </div>
         <div class="popup__txt--trajet">
-          <img src="/src/assets/img/icons/distance.svg" alt="" />
+          <img src={distanceIcon} alt="" />
           <h3 id="distance" />
         </div>
         <div class="popup__txt--btn">
           <a href="#"> En savoir +</a>
-          <img src="/src/assets/img/icons/play.svg" alt="" />
+          <img src={playIcon} alt="" />
         </div>
       </div>
     </div>

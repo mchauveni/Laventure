@@ -53,7 +53,11 @@
                 <ul>Historique</ul>
             </li>
         </div>
-        <div class="discover__style" />
+        <div class="places__home test">
+          <Places/>
+      </div>
     </section>
+    <p id="test"> </p>
+    <script src="/src/scripts/places.ts" type="module"></script>
 </main>
 <Footer active="home" />

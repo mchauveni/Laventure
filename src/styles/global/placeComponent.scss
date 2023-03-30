@@ -3,6 +3,12 @@
   overflow: auto;
   white-space: nowrap;
 }
+.test > div {
+  display: none;
+}
+.show {
+  display: flex !important;
+}
 .places__list {
   display: grid;
   grid-template-columns: repeat(2, 45vw);

@@ -32,16 +32,16 @@
       <div class="popup__txt">
         <h2 class="popup__txt--title" />
         <div class="popup__txt--place">
-          <img src="/src/assets/img/place_map.svg" alt="" />
+          <img src="/src/assets/img/icons/place.svg" alt="" />
           <h3 id="place" />
         </div>
         <div class="popup__txt--trajet">
-          <img src="/src/assets/img/lieu.svg" alt="" />
+          <img src="/src/assets/img/icons/distance.svg" alt="" />
           <h3 id="distance" />
         </div>
         <div class="popup__txt--btn">
           <a href="#"> En savoir +</a>
-          <img src="/src/assets/img/play.svg" alt="" />
+          <img src="/src/assets/img/icons/play.svg" alt="" />
         </div>
       </div>
     </div>

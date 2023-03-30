@@ -5,7 +5,8 @@
   import Map from "./lib/Map.svelte";
   import PlaceComponent from "./lib/PlaceComponent.svelte";
   import Loader from "./lib/Loader.svelte";
-  import { fly } from "svelte/transition";
+  import Focus from "./lib/Focus.svelte";
+  import { fade, fly } from 'svelte/transition';
   import { pageState, overlay, mapLoaded } from "./lib/stores";
 
   import heroimg from "/src/assets/img/hero_index_img.png";
@@ -21,22 +22,25 @@
     overlayValue = value;
   });
 
-  import { onMount } from "svelte";
-
   let mapLoadedValue;
   mapLoaded.subscribe((value) => {
     mapLoadedValue = value;
   });
 </script>
 
-<div
-  class="page"
-  class:visible={overlayValue === "loader"}
-  transition:fly={{ x: -200, duration: 1000 }}
->
+
+
+{#if overlayValue === "focus"}
+<div class="page" class:visible={overlayValue === "focus"}>
+  <Focus />
+</div>
+{/if}
+
+{#if overlayValue === "loader"}
+<div class="page" class:visible={overlayValue === "loader"}>
   <Loader />
 </div>
-
+{/if}
 <div class="page" class:visible={pageStateValue === "index"}>
   <header class="header">
     <section class="header__design">

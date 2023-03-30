@@ -1,20 +1,23 @@
 <script>
-    import Footer from "./Footer.svelte";
-    import { pageState, overlay } from "./stores";
-    import Places from "./PlaceComponent.svelte"
-
+  import Footer from "./Footer.svelte";
+  import { pageState, overlay } from "./stores";
+  import Places from "./PlaceComponent.svelte";
 </script>
 
 <header class="header">
-    <section class="header__design">
-        <div class="header__design--first" />
-        <div class="header__design--second" />
-        <div class="header__design--third" />
-        <div class="header__design--fourth" />
-    </section>
-    <section class="header__logo">
-        <img class="header__logo--img" src="/src/assets/img/Logo_type.png" alt="Logo de notre application" />
-    </section>
+  <section class="header__design">
+    <div class="header__design--first" />
+    <div class="header__design--second" />
+    <div class="header__design--third" />
+    <div class="header__design--fourth" />
+  </section>
+  <section class="header__logo">
+    <img
+      class="header__logo--img"
+      src="/src/assets/img/Logo_type.png"
+      alt="Logo de notre application"
+    />
+  </section>
 </header>
 <main class="main">
     <h1 class="main__title">Où partez-vous ?</h1>

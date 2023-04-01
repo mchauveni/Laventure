@@ -1,15 +1,15 @@
 <script>
-    import Home from "@pages/Home.svelte";
-    import Like from "@pages/Like.svelte";
-    import List from "@pages/List.svelte";
-    import Map from "@pages/Map.svelte";
-    import Loader from "@lib/Loader.svelte";
-    import Focus from "@lib/Focus.svelte";
-    import Header from "@lib/Header.svelte";
-    import { pageState, overlay, mapLoaded } from "@lib/stores";
+    import Home from "/src/pages/Home.svelte";
+    import Like from "/src/pages/Like.svelte";
+    import List from "/src/pages/List.svelte";
+    import Map from "/src/pages/Map.svelte";
+    import Loader from "/src/lib/Loader.svelte";
+    import Focus from "/src/lib/Focus.svelte";
+    import Header from "/src/lib/Header.svelte";
+    import { pageState, overlay, mapLoaded } from "/src/lib/stores";
     import { onMount } from "svelte";
 
-    import heroimg from "@img/hero_index_img.png";
+    import heroimg from "/src/assets/img/hero_index_img.png";
 
     let pageStateValue;
     pageState.subscribe((value) => {

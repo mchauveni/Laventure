@@ -1,7 +1,7 @@
 <script>
-    import Header from "@lib/Header.svelte";
-    import Footer from "@lib/Footer.svelte";
-    import Places from "@lib/PlaceComponent.svelte";
+    import Header from "/src/lib/Header.svelte";
+    import Footer from "/src/lib/Footer.svelte";
+    import Places from "/src/lib/PlaceComponent.svelte";
 </script>
 
 <Header />

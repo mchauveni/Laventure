@@ -1,9 +1,9 @@
 <script>
-    import Footer from "@lib/Footer.svelte";
-    import Header from "@lib/Header.svelte";
-    import placeIcon from "@img/icons/place.svg";
-    import distanceIcon from "@img/icons/distance.svg";
-    import playIcon from "@img/icons/play.svg";
+    import Footer from "/src/lib/Footer.svelte";
+    import Header from "/src/lib/Header.svelte";
+    import placeIcon from "/src/assets/img/icons/place.svg";
+    import distanceIcon from "/src/assets/img/icons/distance.svg";
+    import playIcon from "/src/assets/img/icons/play.svg";
 </script>
 
 <Header />

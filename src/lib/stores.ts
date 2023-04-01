@@ -15,3 +15,6 @@ export const mapLoaded = writable(false);
 
 /* the value of the searchBar */
 export const search = writable("");
+
+/*  */
+export const tag = writable('TOUS');

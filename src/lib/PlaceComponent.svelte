@@ -1,6 +1,6 @@
 <script>
     import data from "/src/scripts/place.json";
-    import { overlay, focusData, search } from "./stores";
+    import { overlay, focusData, search, tag } from "./stores";
     import { fade } from "svelte/transition";
     let allplaces = data.places;
 
@@ -11,7 +11,7 @@
 </script>
 
 {#each allplaces as place}
-    {#if place.name.toUpperCase().includes($search.toUpperCase()) || place.namePlace.toUpperCase().includes($search.toUpperCase())}
+    {#if (place.categorie.toUpperCase() === $tag || $tag === "TOUS") && (place.name.toUpperCase().includes($search.toUpperCase()) || place.namePlace.toUpperCase().includes($search.toUpperCase()))}
         <button
             class="placeComponent placeComponent__background"
             style="background-image: url({place.imgSrc});"

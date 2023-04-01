@@ -33,7 +33,6 @@
     if (url != "" && validURL.includes(url)) {
         pageState.set(url);
     }
-    console.log(url);
 </script>
 
 {#if overlayValue === "focus"}

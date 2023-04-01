@@ -4,6 +4,7 @@
     import SearchBar from "/src/lib/SearchBar.svelte";
     import Places from "/src/lib/PlaceComponent.svelte";
     import datas from "/src/scripts/place.json";
+    import { tag } from "/src/lib/stores";
 
     let value = "";
 
@@ -13,6 +14,13 @@
         const dataPlace = data.namePlace;
         (value = data.name), data.namePlace;
     });
+
+    let discoverTag = "tous";
+    let nearYouTag = "tous";
+
+    function changeTag(event) {
+        tag.set(event.target.innerText.toUpperCase());
+    }
 </script>
 
 <Header />
@@ -21,13 +29,13 @@
     <SearchBar />
     <section class="discover" style="z-index:999;">
         <div class="discover__txt">
-            <h2 class="discover__txt--title">Découvrir les lieux</h2>
-            <li class="discover__txt--liste">
-                <ul>Tous</ul>
-                <ul>Nature</ul>
-                <ul>Religion</ul>
-                <ul>Production</ul>
-                <ul>Historique</ul>
+            <h2 class="discover__title">Découvrir les lieux</h2>
+            <li class="discover__liste">
+                <ul><a href="." class="discover__tag" on:click|preventDefault={changeTag} class:selected={$tag === "TOUS"}>Tous</a></ul>
+                <ul><a href="." class="discover__tag" on:click|preventDefault={changeTag} class:selected={$tag === "NATURE"}>Nature</a></ul>
+                <ul><a href="." class="discover__tag" on:click|preventDefault={changeTag} class:selected={$tag === "RELIGION"}>Religion</a></ul>
+                <ul><a href="." class="discover__tag" on:click|preventDefault={changeTag} class:selected={$tag === "PRODUCTION"}>Production</a></ul>
+                <ul><a href="." class="discover__tag" on:click|preventDefault={changeTag} class:selected={$tag === "HISTORIQUE"}>Historique</a></ul>
             </li>
         </div>
         <div class="places__home">
@@ -36,13 +44,13 @@
     </section>
     <section class="discover" style="z-index:999;">
         <div class="discover__txt">
-            <h2 class="discover__txt--title">Autour de vous</h2>
-            <li class="discover__txt--liste">
-                <ul>Tous</ul>
-                <ul>Nature</ul>
-                <ul>Religion</ul>
-                <ul>Production</ul>
-                <ul>Historique</ul>
+            <h2 class="discover__title">Autour de vous</h2>
+            <li class="discover__liste">
+                <ul><a href="." class="discover__tag" on:click|preventDefault={changeTag} class:selected={$tag === "TOUS"}>Tous</a></ul>
+                <ul><a href="." class="discover__tag" on:click|preventDefault={changeTag} class:selected={$tag === "NATURE"}>Nature</a></ul>
+                <ul><a href="." class="discover__tag" on:click|preventDefault={changeTag} class:selected={$tag === "RELIGION"}>Religion</a></ul>
+                <ul><a href="." class="discover__tag" on:click|preventDefault={changeTag} class:selected={$tag === "PRODUCTION"}>Production</a></ul>
+                <ul><a href="." class="discover__tag" on:click|preventDefault={changeTag} class:selected={$tag === "HISTORIQUE"}>Historique</a></ul>
             </li>
         </div>
         <div class="places__home test">

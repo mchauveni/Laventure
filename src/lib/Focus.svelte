@@ -9,6 +9,7 @@
   });
 
   let direction;
+
   function onSwipe(event) {
     direction = event.detail.direction;
     if (direction == "bottom") {
@@ -26,7 +27,7 @@
 
 <main
   class="focus"
-  use:swipe={{ timeframe: 500, minSwipeDistance: 100, touchAction: "" }}
+  use:swipe={{ timeframe: 500, minSwipeDistance: 100 }}
   on:swipe={onSwipe}
   transition:fly={{ y: 800, duration: 600 }}
 >

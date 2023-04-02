@@ -1,103 +1,83 @@
 <script>
-  import Home from "./lib/Home.svelte";
-  import Like from "./lib/Like.svelte";
-  import List from "./lib/List.svelte";
-  import Map from "./lib/Map.svelte";
-  import PlaceComponent from "./lib/PlaceComponent.svelte";
-  import Loader from "./lib/Loader.svelte";
-  import Focus from "./lib/Focus.svelte";
-  import { fade, fly } from 'svelte/transition';
-  import { pageState, overlay, mapLoaded } from "./lib/stores";
+    import Home from "/src/pages/Home.svelte";
+    import Like from "/src/pages/Like.svelte";
+    import List from "/src/pages/List.svelte";
+    import Map from "/src/pages/Map.svelte";
+    import Loader from "/src/lib/Loader.svelte";
+    import Focus from "/src/lib/Focus.svelte";
+    import Header from "/src/lib/Header.svelte";
+    import { pageState, overlay, mapLoaded } from "/src/lib/stores";
+    import { onMount } from "svelte";
 
-  import heroimg from "/src/assets/img/hero_index_img.png";
-  import logo from "/src/assets/img/logo_type.png";
+    import heroimg from "/src/assets/img/hero_index_img.png";
 
-  let pageStateValue;
-  pageState.subscribe((value) => {
-    pageStateValue = value;
-  });
+    let pageStateValue;
+    pageState.subscribe((value) => {
+        pageStateValue = value;
+        history.pushState(history.state, "", pageStateValue);
+    });
 
-  let overlayValue;
-  overlay.subscribe((value) => {
-    overlayValue = value;
-  });
+    let overlayValue;
+    overlay.subscribe((value) => {
+        overlayValue = value;
+    });
 
-  let mapLoadedValue;
-  mapLoaded.subscribe((value) => {
-    mapLoadedValue = value;
-  });
+    let mapLoadedValue;
+    mapLoaded.subscribe((value) => {
+        mapLoadedValue = value;
+    });
+
+    let url = ``;
+    let validURL = ["index", "home", "map", "list", "like"];
+    onMount(() => (url = window.location.href));
+    if (url != "" && validURL.includes(url)) {
+        pageState.set(url);
+    }
 </script>
 
-
-
 {#if overlayValue === "focus"}
-<div class="page" class:visible={overlayValue === "focus"}>
-  <Focus />
-</div>
+    <div class="page" class:visible={overlayValue === "focus"}>
+        <Focus />
+    </div>
 {/if}
 
 {#if overlayValue === "loader"}
-<div class="page" class:visible={overlayValue === "loader"}>
-  <Loader />
-</div>
+    <div class="page" class:visible={overlayValue === "loader"}>
+        <Loader />
+    </div>
 {/if}
+
 <div class="page" class:visible={pageStateValue === "index"}>
-  <header class="header">
-    <section class="header__design">
-      <div class="header__design--first" />
-      <div class="header__design--second" />
-      <div class="header__design--third" />
-      <div class="header__design--fourth" />
-    </section>
-    <section class="header__logo">
-      <img
-        class="header__logo--img"
-        srcset={logo}
-        alt="Logo de notre application"
-      />
-    </section>
-  </header>
-  <main class="main">
-    <section class="main__title">
-      <h1>
-        La France est belle, <br />
-        <span class="main__title--span">
-          Découvrez la, avec son histoire !</span
-        >
-      </h1>
-    </section>
-    <section class="main__illustration">
-      <img
-        class="main__illustration--img"
-        src={heroimg}
-        alt="Illustration du voyage"
-      />
-    </section>
-    <section class="main__btn">
-      <a
-        href="."
-        class="main__btn--btn"
-        on:click|preventDefault={() => pageState.set("home")}
-      >
-        Partir à l'aventure
-      </a>
-      <a href="." class="main__btn--mtn_legal"> Mentions légales</a>
-    </section>
-  </main>
+    <Header />
+    <main class="main">
+        <section class="main__title">
+            <h1>
+                La France est belle, <br />
+                <span class="main__title--span"> Découvrez la, avec son histoire !</span>
+            </h1>
+        </section>
+        <section class="main__illustration">
+            <img class="main__illustration--img" src={heroimg} alt="Illustration du voyage" />
+        </section>
+        <section class="main__btn">
+            <a href="." class="main__btn--btn" on:click|preventDefault={() => pageState.set("home")}> Partir à l'aventure </a>
+            <a href="." class="main__btn--mtn_legal"> Mentions légales</a>
+        </section>
+    </main>
 </div>
 
 <div class="page" class:visible={pageStateValue === "home"}>
-  <Home />
+    <Home />
 </div>
 
 <div class="page" class:visible={pageStateValue === "map"}>
-  <Map />
+    <Map />
 </div>
 
 <div class="page" class:visible={pageStateValue === "list"}>
-  <List />
+    <List />
 </div>
 
 <div class="page" class:visible={pageStateValue === "like"}>
-  <Like />
+    <Like />
 </div>

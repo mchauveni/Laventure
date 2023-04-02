@@ -1,12 +1,33 @@
 .discover {
   margin-top: 2rem;
 }
-.discover__txt--title {
+
+.discover__title {
   font-size: 1.2rem;
 }
-.discover__txt--liste {
+
+.discover__liste {
   margin-top: 1rem;
   display: flex;
   justify-content: space-around;
   color: rgba(39, 45, 45, 0.5);
+}
+
+.discover__tag {
+  color: var(--sombre);
+  text-decoration: none;
+}
+
+.discover__tag.selected {
+  color: var(--primary);
+  font-weight: var(--font-weight-bold);
+}
+
+:global([data-svelte-search] input) {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.25rem;
 }

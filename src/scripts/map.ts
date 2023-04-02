@@ -1,6 +1,7 @@
 import "leaflet";
 import { pageState, mapLoaded, overlay } from "./../lib/stores";
 import data from "./place.json";
+import markerImg from "/src/assets/img/icons/map_marker.svg";
 
 let alldatas = data.places;
 
@@ -15,7 +16,7 @@ const title = document.querySelector(".popup__txt--title");
 infos.classList.toggle("d-none");
 
 var Icon = L.icon({
-  iconUrl: "src/assets/img/point.svg",
+  iconUrl: markerImg,
   // shadowUrl: "./../assets/img/place.svg",
 
   iconSize: [30], // size of the icon
@@ -85,7 +86,7 @@ const markerY = markerXY["lng"];
 map.on("click", onMapClick);
 
 var BigIcon = L.icon({
-  iconUrl: "src/assets/img/icons/point_click.svg",
+  iconUrl: markerImg,
   // shadowUrl: "./../../img/abeille_ombre.png",
 
   iconSize: [48], // size of the icon

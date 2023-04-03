@@ -1,81 +1,81 @@
 .focus {
-    height: 100vh;
-    z-index: 10;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  height: 100vh;
+  z-index: 10;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .focus__wrapper {
-    z-index: 9;
-    max-height: 70vh;
-    padding: 1.5rem;
-    padding-bottom: 100px;
-    background-color: var(--secondary);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+  z-index: 9;
+  max-height: 70vh;
+  padding: 1.5rem;
+  padding-bottom: 100px;
+  background-color: var(--secondary);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .focus__header {
-    margin: 0.75rem 0;
-    border-bottom: 1px solid var(--clair);
+  margin: 0.75rem 0;
+  border-bottom: 1px solid var(--clair);
 }
 
 .focus__headerContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem;
 }
 
 .focus__title {
-    margin: 1rem 0 2rem 0;
-    font-size: 2rem;
-    font-weight: var(--font-weight-bold);
+  margin: 1rem 0 2rem 0;
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
 }
 
 .focus__iconWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .focus__icon {
-    max-height: 1.5rem;
-    margin-right: 0.5rem;
+  max-height: 1.5rem;
+  margin-right: 0.5rem;
 }
 
 .focus__descriptionTitle {
-    margin: 1.25rem 0;
-    font-weight: var(--font-weight-bold);
+  margin: 1.25rem 0;
+  font-weight: var(--font-weight-bold);
 }
 
 .focus__description {
-    overflow: scroll;
-    scrollbar-width: none;
+  overflow: scroll;
+  scrollbar-width: none;
 }
 
 .focus__image {
-    position: relative;
-    z-index: 8;
-    height: 100%;
-    width: 100%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    transform: translateY(2rem);
-    display: block;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  position: relative;
+  z-index: 8;
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  transform: translateY(2rem);
+  display: block;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .focus__close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    max-height: 3rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  max-height: 3rem;
 }

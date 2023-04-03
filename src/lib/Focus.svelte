@@ -18,8 +18,16 @@
   }
 
   function liked(){
-    const likedPlaces = JSON.parse(localStorage.getItem('places')) || [];
-    likedPlaces.push(place.id);
+    const likedPlaces = JSON.parse(localStorage.getItem('places')) || []; 
+    const index = likedPlaces.indexOf(place.id);
+    const icon = document.getElementById('like');
+    if (index === -1) {
+      likedPlaces.push(place.id);
+      icon.src = "/src/assets/img/icons/like_fill.svg"
+    } else {
+      likedPlaces.splice(index, 1);
+      icon.src = '/src/assets/img/icons/like_active.svg';
+    }
     localStorage.setItem('places', JSON.stringify(likedPlaces));
   }
 

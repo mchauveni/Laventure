@@ -1,10 +1,11 @@
 <script>
-    import data from "/src/scripts/place.json";
+    import test from "/src/scripts/place.json";
     import { overlay, focusData, search, tag } from "./stores";
     import { fade } from "svelte/transition";
-    let allplaces = data.places;
+    let allplaces = test.places;
 
   export let showDeleteBtn = false;
+  export let data;
 
   function placeClick(place) {
     overlay.set("focus");

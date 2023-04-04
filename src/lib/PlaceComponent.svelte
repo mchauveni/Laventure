@@ -42,6 +42,7 @@
                 <div class="placeComponent__locationWrapper">
                     <img class="placeComponent__locationIcon" src="/src/assets/img/icons/location_icon.svg" alt="location_icon" />
                     <p class="placeComponent__location">{place.namePlace}</p>
+                    <p class="localisationPlace" style="display:none;"> {place.placeX} {place.placeY}</p>
                 </div>
             </div>
             {#if showDeleteBtn}

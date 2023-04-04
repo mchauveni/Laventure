@@ -1,11 +1,10 @@
 export {};
-const components = document
-  .querySelector(".hide")
-  .querySelectorAll(".placeComponent");
+
+const components = document.querySelectorAll(".placeComponent");
 
 let test1;
 
-var watchId;
+let watchId;
 
 let distances;
 let value;
@@ -25,10 +24,10 @@ function appendLocation(location, verb) {
   distances = [latitude, longitude];
   components.forEach((component) => {
     test1 = component.querySelector(".localisationPlace").innerHTML;
-    test1 = test1.split(",");
+    test1 = test1.split(" ");
     lat1 = test1[0];
     lon2 = test1[1];
-    maxdist = 108;
+    maxdist = 30;
     result = distance(lat1, lon2, latitude, longitude);
     if (parseInt(result) < maxdist) {
       component.classList.add("show");
@@ -37,20 +36,21 @@ function appendLocation(location, verb) {
     }
   });
 }
-function distance(lat1, lon2, latitude, longitude) {
-  var R = 6371; // km (change this constant to get miles)
-  var dLat = ((latitude - lat1) * Math.PI) / 180;
-  var dLon = ((longitude - lon2) * Math.PI) / 180;
+
+function distance(latbis, lonbis, latitudebis, longitudebis) {
+  var R = 6371;
+  var dLat = ((latitudebis - latbis) * Math.PI) / 180;
+  var dLon = ((longitudebis - lonbis) * Math.PI) / 180;
   var a =
     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos((lat1 * Math.PI) / 180) *
-      Math.cos((latitude * Math.PI) / 180) *
+    Math.cos((latbis * Math.PI) / 180) *
+      Math.cos((latitudebis * Math.PI) / 180) *
       Math.sin(dLon / 2) *
       Math.sin(dLon / 2);
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   d = R * c;
-  if (d > 1) return Math.round(d) + "km";
-  else if (d <= 1) return Math.round(d * 1000) + "m";
+  if (d > 1) return Math.floor(d) + " km";
+  else if (d <= 1) return Math.floor(d * 1000) + " m";
 }
 
 if ("geolocation" in navigator) {

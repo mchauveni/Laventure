@@ -156,7 +156,7 @@ marker.on("click", function (e) {
   title.innerHTML = alldatas[0].name;
   emplacement.innerHTML = alldatas[0].namePlace;
   img.src = alldatas[0].imgSrc;
-  distance.innerHTML = distance1;
+  distance.innerHTML = "~" + Math.floor(distance1 / 1000) + "km";
   marker3.setIcon(Icon);
   marker2.setIcon(Icon);
   marker4.setIcon(Icon);
@@ -168,7 +168,7 @@ marker2.on("click", function (e) {
   title.innerHTML = alldatas[1].name;
   emplacement.innerHTML = alldatas[1].namePlace;
   img.src = alldatas[1].imgSrc;
-  distance.innerHTML = distance2;
+  distance.innerHTML = "~" + Math.floor(distance2 / 1000) + "km";
   marker.setIcon(Icon);
   marker3.setIcon(Icon);
   marker4.setIcon(Icon);
@@ -180,7 +180,7 @@ marker3.on("click", function (e) {
   title.innerHTML = alldatas[2].name;
   emplacement.innerHTML = alldatas[2].namePlace;
   img.src = alldatas[2].imgSrc;
-  distance.innerHTML = distance3;
+  distance.innerHTML = "~" + Math.floor(distance3 / 1000) + "km";
   marker.setIcon(Icon);
   marker2.setIcon(Icon);
   marker4.setIcon(Icon);
@@ -192,7 +192,7 @@ marker4.on("click", function (e) {
   title.innerHTML = alldatas[3].name;
   emplacement.innerHTML = alldatas[3].namePlace;
   img.src = alldatas[3].imgSrc;
-  distance.innerHTML = distance3;
+  distance.innerHTML = "~" + Math.floor(distance4 / 1000) + "km";
   marker.setIcon(Icon);
   marker2.setIcon(Icon);
   marker5.setIcon(Icon);
@@ -204,7 +204,7 @@ marker5.on("click", function (e) {
   title.innerHTML = alldatas[4].name;
   emplacement.innerHTML = alldatas[4].namePlace;
   img.src = alldatas[4].imgSrc;
-  distance.innerHTML = distance3;
+  distance.innerHTML = "~" + Math.floor(distance5 / 1000) + "km";
   marker.setIcon(Icon);
   marker2.setIcon(Icon);
   marker4.setIcon(Icon);

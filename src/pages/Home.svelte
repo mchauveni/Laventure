@@ -53,11 +53,10 @@
                 <ul><a href="." class="discover__tag" on:click|preventDefault={changeTag} class:selected={$tag === "HISTORIQUE"}>Historique</a></ul>
             </li>
         </div>
-        <div class="places__home test">
+        <div class="places__home hide">
             <Places />
         </div>
     </section>
-    <p id="test" />
     <script src="/src/scripts/places.ts" type="module"></script>
 </main>
 <Footer active="home" />

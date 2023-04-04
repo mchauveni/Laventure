@@ -2,10 +2,11 @@
     import test from "/src/scripts/place.json";
     import { overlay, focusData, search, tag } from "./stores";
     import { fade } from "svelte/transition";
-    let allplaces = test.places;
 
   export let showDeleteBtn = false;
-  export let data;
+  export let data = undefined;
+
+  let allplaces = data || test.places;
 
   function placeClick(place) {
     overlay.set("focus");
@@ -18,7 +19,10 @@
   });
 
   function deleted() {
-    console.log(place)
+    const likedPlaces = JSON.parse(localStorage.getItem('places')) || []; 
+    const index = likedPlaces.indexOf(place.id);
+    likedPlaces.splice(index, 1);
+    localStorage.setItem('places', JSON.stringify(likedPlaces));
   }
 
 </script>
@@ -40,9 +44,10 @@
                     <p class="placeComponent__location">{place.namePlace}</p>
                 </div>
             </div>
+            {#if showDeleteBtn}
+            <img class="delete__btn" src="/src/assets/img/icons/trash.svg" alt="Supprimer des favoris" on:click={deleted} on:keydown={deleted}>
+            {/if}
         </button>
     {/if}
-  {#if showDeleteBtn}
-  <img class="delete__btn" src="/src/assets/img/icons/trash.svg" alt="Supprimer des favoris" on:click={deleted} on:keydown={deleted}>
-{/if}
+
 {/each}

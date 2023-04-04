@@ -15,6 +15,20 @@
   top: 10px;
   width: 8vw;
 }
+.btn_deleteAll {
+  position: fixed;
+  width: 70vw;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  border-radius: 20px;
+  background-color: red;
+  color: var(--clair);
+  font-size: 1.2rem;
+  font-weight: var(--font-weight-bold);
+  padding: 1rem;
+}
 .places__list {
   display: grid;
   grid-template-columns: repeat(2, 45vw);

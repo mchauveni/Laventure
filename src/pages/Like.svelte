@@ -13,6 +13,10 @@
       return likedPlacesList;
     }
 
+    function deleteAll() {
+        localStorage.clear();
+    }
+
     let value = "";
     const allDatas = datas.places;
     allDatas.forEach(data => {
@@ -20,7 +24,7 @@
         const dataPlace = data.namePlace;
         (value = data.name), data.namePlace;
   });
-    const likedPlacesList = displayLikedPlaces();
+  const likedPlacesList = displayLikedPlaces();
   </script>
   
   <Header />
@@ -28,11 +32,12 @@
     <h1 class="main__title">Vos lieux favoris</h1>
     <SearchBar />
     {#if likedPlacesList.length > 0}
-    <div class="places__home">
-        <Places data={likedPlacesList} />
+    <div class="places__list">
+        <Places showDeleteBtn={true} data={likedPlacesList} />
     </div>
     {:else}
-      <p>Aucun lieu favori pour le moment.</p>
+      <p style="padding-top: 2rem;">Aucun lieu favori pour le moment.</p>
     {/if} 
+    <button class="btn_deleteAll" on:click={deleteAll} on:keydown={deleteAll}> Supprimer tous mes favoris </button>
   </main>
   <Footer active="like" />

@@ -1,5 +1,5 @@
 import { allLikedPlaces } from "/src/lib/stores";
-import datas from "/public/scripts/place.json";
+import datas from "/src/scripts/place.json";
 
 export function displayLikedPlaces() {
     const likedPlaces = JSON.parse(localStorage.getItem("places")) || [];

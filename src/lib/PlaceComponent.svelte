@@ -1,9 +1,9 @@
 <script>
-    import test from "/public/scripts/place.json";
+    import test from "/src/scripts/place.json";
     import { overlay, focusData, search, tag } from "/src/lib/stores";
     import { fade } from "svelte/transition";
     import { allLikedPlaces } from "./stores";
-    import { displayLikedPlaces } from "/public/scripts/localstorage.ts";
+    import { displayLikedPlaces } from "/src/scripts/localstorage.ts";
 
     export let showDeleteBtn = false;
     export let data = undefined || test.places;

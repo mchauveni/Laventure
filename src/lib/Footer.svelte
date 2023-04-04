@@ -1,6 +1,6 @@
 <script>
     import { pageState, overlay } from "./stores";
-    import { displayLikedPlaces } from "/public/scripts/localstorage.ts";
+    import { displayLikedPlaces } from "/src/scripts/localstorage.ts";
     export let active;
 
     function handleFooterClick(page) {

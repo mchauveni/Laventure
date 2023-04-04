@@ -3,8 +3,9 @@
     import Footer from "/src/lib/Footer.svelte";
     import SearchBar from "/src/lib/SearchBar.svelte";
     import Places from "/src/lib/PlaceComponent.svelte";
-    import datas from "/public/scripts/place.json";
+    import datas from "/src/scripts/place.json";
     import { tag } from "/src/lib/stores";
+    import "/src/scripts/places.ts";
 
     let value = "";
 
@@ -57,6 +58,5 @@
             <Places />
         </div>
     </section>
-    <script src="/public/scripts/places.ts" type="module"></script>
 </main>
 <Footer active="home" />

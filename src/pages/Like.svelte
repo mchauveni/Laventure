@@ -4,9 +4,9 @@
     import Footer from "/src/lib/Footer.svelte";
     import SearchBar from "/src/lib/SearchBar.svelte";
     import Places from "/src/lib/PlaceComponent.svelte";
-    import datas from "/public/scripts/place.json";
+    import datas from "/src/scripts/place.json";
     import { allLikedPlaces } from "/src/lib/stores";
-    import { displayLikedPlaces, deleteAll } from "/public/scripts/localstorage.ts";
+    import { displayLikedPlaces, deleteAll } from "/src/scripts/localstorage.ts";
 
     let value = "";
     const allDatas = datas.places;

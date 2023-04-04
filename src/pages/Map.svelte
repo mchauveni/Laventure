@@ -4,6 +4,7 @@
     import placeIcon from "/src/assets/img/icons/place.svg";
     import distanceIcon from "/src/assets/img/icons/distance.svg";
     import playIcon from "/src/assets/img/icons/play.svg";
+    import "/src/scripts/map.ts";
 </script>
 
 <Header />
@@ -34,7 +35,5 @@
             </div>
         </div>
     </section>
-
-    <script src="/public/scripts/map.ts" type="module"></script>
 </main>
 <Footer active="map" />

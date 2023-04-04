@@ -1,8 +1,10 @@
-export { };
-document.addEventListener('DOMContentLoaded', () => {
+export {};
+document.addEventListener("DOMContentLoaded", () => {
+  const components = document
+    .querySelector(".hide")
+    .querySelectorAll(".placeComponent");
 
-
-  const components = document.querySelectorAll(".placeComponent");
+  console.log(components);
 
   let test1;
 
@@ -25,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     longitude = value.longitude;
     distances = [latitude, longitude];
     components.forEach((component) => {
+      console.log("test");
       test1 = component.querySelector(".localisationPlace").innerHTML;
       test1 = test1.split(" ");
       lat1 = test1[0];
@@ -46,9 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
     var a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
       Math.cos((latbis * Math.PI) / 180) *
-      Math.cos((latitudebis * Math.PI) / 180) *
-      Math.sin(dLon / 2) *
-      Math.sin(dLon / 2);
+        Math.cos((latitudebis * Math.PI) / 180) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     d = R * c;
     if (d > 1) return Math.floor(d) + " km";
@@ -63,5 +66,4 @@ document.addEventListener('DOMContentLoaded', () => {
       watchId = navigator.geolocation.watchPosition(appendLocation);
     });
   }
-
-})
+});

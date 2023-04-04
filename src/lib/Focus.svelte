@@ -1,6 +1,11 @@
 <script lang="ts">
   import { focusData, overlay } from "./stores";
   import { swipe } from "svelte-gestures";
+  import localisationIcon from "/src/assets/img/icons/location_icon.svg";
+  import unlikedimg from "/src/assets/img/icons/like_active.svg";
+  import likedimg from "/src/assets/img/icons/like_fill.svg";
+  import closeIcon from "/src/assets/img/icons/close.svg";
+  import distanceImg from "/src/assets/img/icons/distance.svg";
   import { fly } from "svelte/transition";
 
   let place;
@@ -23,10 +28,10 @@
     const icon = document.getElementById('like');
     if (index === -1) {
       likedPlaces.push(place.id);
-      icon.src = "/src/assets/img/icons/like_fill.svg"
+      icon.src = {likedimg};
     } else {
       likedPlaces.splice(index, 1);
-      icon.src = '/src/assets/img/icons/like_active.svg';
+      icon.src = {unlikedimg};
     }
     localStorage.setItem('places', JSON.stringify(likedPlaces));
   }
@@ -45,8 +50,8 @@
     transition:fly={{ y: 500, duration: 600 }}
   >
     <img
-      src="/src/assets/img/icons/close.svg"
-      alt=""
+      src={closeIcon}
+      alt="Fermer"
       class="focus__close"
       on:click|preventDefault={() => overlay.set("none")}
       on:keydown={() => overlay.set("none")}
@@ -56,12 +61,12 @@
     <header class="focus__header">
       <div class="focus__headerContainer">
         <h1 class="focus__title">{place.name}</h1>
-        <img id="like" src="/src/assets/img/icons/like_active.svg" alt="like icon" on:click={liked} on:keydown={liked} />
+        <img id="like" src={unlikedimg} alt="like icon" on:click={liked} on:keydown={liked} />
       </div>
       <div class="focus__headerContainer">
         <div class="focus__location focus__iconWrapper">
           <img
-            src="/src/assets/img/icons/location_icon.svg"
+            src={localisationIcon}
             alt=""
             class="focus__icon"
           />
@@ -69,7 +74,7 @@
         </div>
         <div class="focus__distance focus__iconWrapper">
           <img
-            src="/src/assets/img/icons/distance.svg"
+            src= {distanceImg}
             alt=""
             class="focus__icon"
           />

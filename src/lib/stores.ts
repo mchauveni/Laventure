@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import data from "../scripts/place.json";
+import data from "/src/scripts/place.json";
 
 let allplaces = data.places;
 
@@ -17,6 +17,6 @@ export const mapLoaded = writable(false);
 export const search = writable("");
 
 /*  */
-export const tag = writable('TOUS');
+export const tag = writable("TOUS");
 
 export const allLikedPlaces = writable();

@@ -19,7 +19,7 @@
             </svg>
             <img class="popup__img" id="popup_img" alt="" />
             <div class="popup__txt">
-                <h2 class="popup__txt--title" />
+                <p class="popup__txt--title" />
                 <div class="popup__txt--place">
                     <img src={placeIcon} alt="" />
                     <h3 id="place" />

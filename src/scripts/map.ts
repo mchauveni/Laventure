@@ -1,8 +1,9 @@
 import "leaflet";
 import { onMount } from "svelte";
-import { pageState, mapLoaded, overlay } from "../lib/stores";
+import { pageState, mapLoaded, overlay } from "../../src/lib/stores";
 import data from "./place.json";
 import markerImg from "/src/assets/img/icons/map_marker.svg";
+import carImg from "/src/assets/img/icons/car.svg";
 
 document.addEventListener("DOMContentLoaded", () => {
   let alldatas = data.places;
@@ -114,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function appendLocation(location, verb) {
     verb = verb || "updated";
     var Target = L.icon({
-      iconUrl: "src/assets/img/icons/car.svg",
+      iconUrl: carImg,
       iconSize: [35], // size of the icon
       shadowSize: [50, 64], // size of the shadow
       iconAnchor: [22, 69], // point of the icon which will correspond to marker's location
@@ -222,5 +223,4 @@ document.addEventListener("DOMContentLoaded", () => {
     marker4.setIcon(Icon);
     marker5.setIcon(Icon);
   });
-
-})
+});

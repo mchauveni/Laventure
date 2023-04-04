@@ -32,6 +32,11 @@
 .places__list {
   display: grid;
   grid-template-columns: repeat(2, 45vw);
+  text-align: center;
+  .placeComponent {
+    margin: auto;
+    margin-top: 1rem;
+  }
 }
 .placeComponent {
   width: 10rem;
@@ -82,4 +87,16 @@
 
 .placeComponent__location {
   font-size: 0.85rem;
+}
+
+@media screen and (min-width: 800px) {
+  .delete__btn {
+    width: 4vw;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .delete__btn {
+    width: 2vw;
+  }
 }

@@ -3,6 +3,7 @@
     import { overlay, focusData, search, tag } from "/src/lib/stores";
     import { fade } from "svelte/transition";
     import { allLikedPlaces } from "./stores";
+    import localisationIcon from "/src/assets/img/icons/location_icon.svg";
     import { displayLikedPlaces } from "/src/scripts/localstorage.ts";
 
     export let showDeleteBtn = false;
@@ -49,7 +50,7 @@
             <div class="placeComponent__descWrapper">
                 <h3 class="placeComponent__title">{place.name}</h3>
                 <div class="placeComponent__locationWrapper">
-                    <img class="placeComponent__locationIcon" src="/src/assets/img/icons/location_icon.svg" alt="location_icon" />
+                    <img class="placeComponent__locationIcon" src={localisationIcon} alt="location_icon" />
                     <p class="placeComponent__location">{place.namePlace}</p>
                     <p class="localisationPlace" style="display:none;">{place.placeX} {place.placeY}</p>
                 </div>

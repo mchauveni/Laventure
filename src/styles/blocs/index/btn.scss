@@ -1,3 +1,7 @@
+.main__illustration--img {
+  display: block;
+  margin: auto;
+}
 .main__btn {
   display: flex;
   flex-direction: column;
@@ -20,4 +24,10 @@
   color: var(--sombre);
   margin-top: 4rem;
   font-size: 1.1rem;
+}
+
+@media screen and (min-width: 800px) {
+  .main__btn--btn {
+    width: 60%;
+  }
 }

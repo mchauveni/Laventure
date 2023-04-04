@@ -35,6 +35,6 @@
         </div>
     </section>
 
-    <script src="/src/scripts/map.ts" type="module"></script>
+    <script src="/public/scripts/map.ts" type="module"></script>
 </main>
 <Footer active="map" />

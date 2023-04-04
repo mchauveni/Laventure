@@ -57,6 +57,6 @@
             <Places />
         </div>
     </section>
-    <script src="/src/scripts/places.ts" type="module"></script>
+    <script src="/public/scripts/places.ts" type="module"></script>
 </main>
 <Footer active="home" />

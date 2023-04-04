@@ -18,3 +18,5 @@ export const search = writable("");
 
 /*  */
 export const tag = writable('TOUS');
+
+export const allLikedPlaces = writable();

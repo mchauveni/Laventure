@@ -14,23 +14,17 @@
   margin-left: 10px;
   padding: 0.5rem;
   color: var(--sombre);
-  width: 8rem;
+  width: 10vw;
   border: none;
   border-radius: 20px;
   background-color: white;
 }
 .main__search--input {
   border: none;
+  border-radius: 20px;
+  width: 65vw;
   font-size: 1.1rem;
   padding-left: 1rem;
   background-color: white;
   outline: none;
-}
-.main__search--filter {
-  color: rgb(116, 116, 116);
-  padding: 0.5rem;
-  width: 8rem;
-  border: none;
-  border-radius: 20px;
-  background-color: white;
 }

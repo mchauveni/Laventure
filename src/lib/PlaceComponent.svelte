@@ -4,6 +4,7 @@
     import { fade } from "svelte/transition";
     import { allLikedPlaces } from "./stores";
     import localisationIcon from "/src/assets/img/icons/location_icon.svg";
+    import trashIcon from "/src/assets/img/icons/trash.svg";
     import { displayLikedPlaces } from "/src/scripts/localstorage.ts";
 
     export let showDeleteBtn = false;
@@ -56,7 +57,7 @@
                 </div>
             </div>
             {#if showDeleteBtn}
-                <img class="delete__btn" src="/src/assets/img/icons/trash.svg" alt="Supprimer des favoris" on:click|stopPropagation={deleted} on:keydown|stopPropagation={deleted} />
+                <img class="delete__btn" src={trashIcon} alt="Supprimer des favoris" on:click|stopPropagation={deleted} on:keydown|stopPropagation={deleted} />
             {/if}
         </button>
     {/if}

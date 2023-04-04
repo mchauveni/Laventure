@@ -28,10 +28,10 @@
     const icon = document.getElementById('like');
     if (index === -1) {
       likedPlaces.push(place.id);
-      icon.src = {likedimg};
+      icon.src = likedimg;
     } else {
       likedPlaces.splice(index, 1);
-      icon.src = {unlikedimg};
+      icon.src = unlikedimg;
     }
     localStorage.setItem('places', JSON.stringify(likedPlaces));
   }

@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import data from "./../scripts/place.json";
+import data from "../../public/scripts/place.json";
 
 let allplaces = data.places;
 

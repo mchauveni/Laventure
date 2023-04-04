@@ -1,5 +1,5 @@
 import "leaflet";
-import { pageState, mapLoaded, overlay } from "./../lib/stores";
+import { pageState, mapLoaded, overlay } from "../../src/lib/stores";
 import data from "./place.json";
 import markerImg from "/src/assets/img/icons/map_marker.svg";
 

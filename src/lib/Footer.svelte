@@ -1,8 +1,6 @@
 <script>
-    import { get } from "svelte/store";
     import { pageState, overlay } from "./stores";
-    import { allLikedPlaces } from "/src/lib/stores";
-    import { displayLikedPlaces } from "/src/scripts/localstorage.ts";
+    import { displayLikedPlaces } from "/public/scripts/localstorage.ts";
     export let active;
 
     function handleFooterClick(page) {

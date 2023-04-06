@@ -1,10 +1,5 @@
-export {};
 document.addEventListener("DOMContentLoaded", () => {
-  const components = document
-    .querySelector(".hide")
-    .querySelectorAll(".placeComponent");
-
-  console.log(components);
+  const components = document.querySelectorAll(".hide .placeComponent");
 
   let test1;
 

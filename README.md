@@ -3,47 +3,59 @@
 ## Description du projet
 
 _L'aventure est un projet réalisé par Mathéo Chaumet-Venier et Anthonin Murail._
-Celui-ci a pour but d'être une appliction de tourisme, avec la possibilités de trouver des lieux magnifiques dans toute la France.
 
-1. Fonctionnalités implémentées :
+Celui-ci a pour but d'être une appliction de tourisme, offrant la possibilités de trouver des lieux magnifiques dans toute la France.
 
-   **GeoLocalisation**
-   Cela nous permets de récupérer où l'utilisateur ce trouve pour pouvoir lui proposer les meilleurs lieux autours de lui, mais aussi de pouvoir voir sur la carte où sont les lieux se trouvant autour de lui. Cela nous permet aussi de lui fournir, la distance qu'il a à parcourir pour pouvoir accéder à ce lieu en fonction du lieu où il se trouve.
+**1. Fonctionnalités implémentées :**
 
-   **LocalStorage**
-   Le local storage va permettre à l'utilisateur, lorsqu'il clique sur un lieu pour avoir des détails sur celui-ci de l'ajout dans sa liste de lieux 'aimés'. Le localstorage va aussi nous permettre d'avoir un système offline qui va garder seulement les lieux que l'utilisateur a décider d'enregistrer.
+**GeoLocalisation**
 
-   **Leaflet**
-   On a opté pour la bibliothèque Leaflet pour pouvoir afficher une map fonctionnel mais aussi facilement maniable. Quelques problèmes sont causés par Leaflet, mais en ayant pas la volonté d'acheter une bibliothèque de Carte, Leaflet nous as été très utile.
+Cela nous permet de récupérer l'endroit où se trouve l'utilisateur afin de lui proposer les meilleurs lieux autour de lui, mais aussi de pouvoir afficher sur la carte les lieux se trouvant à proximité. Cela nous permet également de lui fournir la distance à parcourir pour accéder à ces lieux en fonction de sa position actuelle.
 
-2. Langages utilisés :
+**LocalStorage**
 
-   **Svelte**
-   La plus grosse partie de la structuration de notre projet est du Svelte. Un nouveau langage de programmation pour nous 2, mais ce projet était le moment venu pour nous de l'étudier et de comprendre l'utilité. Toutes nos pages sont produites avec du Svelte, chacune d'elles sont chargés dès le lancement de l'application et le Component _footer_ nous permets de pouvoir naviguer entre les pages. L'utilisation de Component et de Fonction réutilisable dans d'autres pages est quelque chose de nouveau pour nous mais qui permet une facilité intéressante pour gérer des données.
+Le stockage local permet à l'utilisateur, lorsqu'il clique sur un lieu pour obtenir des détails à son sujet, de l'ajouter à sa liste de lieux favoris. Le stockage local nous permet également d'avoir un système hors ligne qui conserve uniquement les lieux que l'utilisateur a choisi d'enregistrer.
 
-   **TypeScript**
-   Pour pouvoir fonctionné avec Svelte, TypeScript est le langage remplaçant notre _Javascript_. Celui-ci nous permets de faire du code plus sécurisé et de pouvoir travailler très facilement avec les Components créer en Svelte. Le fichier _map.ts_ est celui-ci qui se rapproche le plus du _Javascript_ étant donné que celui-ci travail avec la Bibliothèque de carte _Leaflet_.
+**Leaflet**
 
-   **Scss**
-   Ce langage nous permis de bien structuré nos fichiers styles, et pouvoir éviter d'avoir des lignes de code répétitive. Combiné à la méthodologie BEM, SCSS nous a permis de nous retrouver sur chacun de nos fichiers peu importe la personne qui avait créer celui-ci. Très pratique pour s'y retrouver lorsque l'on travail à plusieurs sur un projet.
+Nous avons opté pour la bibliothèque Leaflet pour afficher une carte fonctionnelle mais aussi facilement manipulable. Bien que Leaflet pose quelques problèmes, nous n'avions pas la volonté d'acheter une bibliothèque de cartes et Leaflet s'est révélé très utile.
+
+**2. Langages utilisés :**
+
+**Svelte**
+
+La plus grande partie de la structuration de notre projet est réalisée en utilisant Svelte, un nouveau langage de programmation pour nous deux. Ce projet était l'occasion pour nous d'étudier et de comprendre son utilité. Toutes nos pages sont produites avec Svelte et sont chargées dès le lancement de l'application. Le composant _footer_ nous permet de naviguer entre les pages. L'utilisation de composants et de fonctions réutilisables dans d'autres pages est quelque chose de nouveau pour nous, mais cela offre une facilité intéressante pour gérer les données.
+
+**TypeScript**
+
+Pour fonctionner avec Svelte, nous utilisons TypeScript comme langage de remplacement de _JavaScript_. Cela nous permet de coder de manière plus sécurisée et de travailler facilement avec les composants créés en Svelte. Le fichier _map.ts_ est celui qui se rapproche le plus de _JavaScript_, car il travaille avec la bibliothèque de cartes Leaflet.
+
+**Scss**
+
+Ce langage nous permet de bien structurer nos fichiers de style et d'éviter d'avoir des lignes de code répétitives. En combinant la méthodologie BEM, SCSS nous a permis de nous retrouver facilement sur chacun de nos fichiers, peu importe la personne qui l'a créé. C'est très pratique lorsqu'on travaille à plusieurs sur un projet.
 
 ## Détails concernants l'utilisation
 
-1. Environnement
+**1. Environnement**
 
-   **Appareil**
-   Normalement peu importe l'appareil utilisés cette application doit fonctionné. Bien évidement pour pouvoir accéder au système de GéoLocalisation il faut avoir un appareil permettant ceci. Peu importe la taille de l'écran l'application est responsive et accéssible partout, malgrès le fait que celle-ci est bien plus orientées mobile.
+**Appareil**
 
-   **Navigateur / Connexion**
-   D'après les plusieurs tests réalisés l'application fonctionne sur tout les navigateurs (quelques erreurs sur certains Chrome d'un Android). Niveau connexion tout fonctionne, malgrès un petit temps d'attente si la connexion est très faible.
+Normalement, cette application doit fonctionner sur n'importe quel appareil. Bien évidemment, pour pouvoir accéder au système de géolocalisation, il faut avoir un appareil qui le permet. L'application est responsive et accessible partout, peu importe la taille de l'écran, même si elle est principalement conçue pour les appareils mobiles.
 
-2. Amélioration possible
+**Navigateur / Connexion**
 
-   **Lieux**
-   Effectivement nous avons utilisés une liste de lieu "fictif" pour pouvoir faire des tests en fonction de notre localisation. Si jamais l'application venait à être utiliser, alors celle-ci pourrait alimenter son fichier Json. Celui-ci et tout le reste du code est faits pour que peut importe le nombre de lieu se trouvant dans le fichier Json, l'application fonctionnera.
+D'après les nombreux tests réalisés, l'application fonctionne sur tous les navigateurs, bien qu'il y ait eu quelques erreurs sur certains Chrome d'Android. En termes de connexion, tout fonctionne, bien qu'il y ait un petit temps d'attente si la connexion est très faible.
 
-   **Carte**
-   Comme dit un peu au-dessus, Leaflet nous as été très utile mais celle-ci ne nous as limiter sur quelques points. D'abord sur le chargement de la page, Leaflet n'accepte pas le fait d'être en display none au démarrage de l'application. De plus celle-ci ne nous permets pas de faire des trajets. Oui comme on le voit lorsque l'on clique sur un lieu sur la map, un petit logo play est présent, celui-ci devait nous permettre de lancer le trajet. De plus lors du dezoom sur la carte les lieux ne gardent pas vraiment le vrai placement qu'ils devraient avoir...
+**2. Amélioration possible**
 
-   **Notification**
-   Un système de notification devait aussi voir le jour, avec une notification lorsqu'un utilisateur n'était pas loin d'un lieu qu'il avait aimé. Par cause de temps nous n'avons pas pu réaliser cela, peut-être que cela changera avant la fin du projet. On ne voulait pas réaliser une notification juste pour réaliser une notification, on voulait faire quelque chose de professionnel c'est pourquoi nous n'avons pas pu réaliser cela.
+**Lieux**
+
+Effectivement, nous avons utilisé une liste de lieux fictifs pour pouvoir faire des tests en fonction de notre localisation. Si jamais l'application venait à être utilisée, elle pourrait alimenter son fichier JSON. Tout le code est conçu pour que, peu importe le nombre de lieux se trouvant dans le fichier JSON, l'application fonctionne.
+
+**Carte**
+
+Comme mentionné précédemment, Leaflet nous a été très utile, mais nous avons rencontré quelques limites. Tout d'abord, Leaflet n'accepte pas d'être en mode "display none" au démarrage de l'application. En outre, il ne nous permet pas de tracer des itinéraires entre deux points. Bien que nous ayons ajouté un petit bouton "play" pour lancer la navigation vers un lieu, celui-ci n'est pas fonctionnel. De plus, lorsqu'on effectue un zoom arrière sur la carte, les marqueurs de lieu ne gardent pas toujours leurs positions réelles.
+
+**Notification**
+
+Un système de notifications devait également être mis en place, avec une alerte pour informer l'utilisateur lorsqu'il était proche d'un lieu qu'il avait marqué comme favori. Cependant, en raison de contraintes de temps, nous n'avons pas pu le développer entièrement. Peut-être que nous pourrons y travailler avant la fin du projet. Nous ne voulions pas ajouter une fonctionnalité de notification juste pour en avoir une, mais plutôt créer quelque chose de professionnel, ce qui explique pourquoi nous avons préféré ne pas la mettre en place pour le moment.

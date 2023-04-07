@@ -1,0 +1,15 @@
+{
+    "name": "L'Aventure",
+    "short_name": "L'Aventure",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "La France est belle, partez à sa découverte !",
+    "icons": [
+        {
+            "src": "/assets/logo_app.png",
+            "sizes": "any",
+            "type": "image/png"
+        }
+    ]
+}

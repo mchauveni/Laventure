@@ -16,7 +16,11 @@ export const mapLoaded = writable(false);
 /* the value of the searchBar */
 export const search = writable("");
 
-/*  */
+/* The selected tag for HOME. Can have these values : ["TOUS", "NATURE", "RELIGION", "PRODUCTION", "HISTORIQUE"] */
 export const tag = writable("TOUS");
 
+/* Correspond to the localStorage's liked places */
 export const allLikedPlaces = writable();
+
+/* All places that exists near you */
+export const placesNearYou = writable([]);

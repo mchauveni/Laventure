@@ -4,8 +4,8 @@
     import SearchBar from "/src/lib/SearchBar.svelte";
     import Places from "/src/lib/PlaceComponent.svelte";
     import datas from "/src/scripts/place.json";
-    import { tag } from "/src/lib/stores";
-    import "/src/scripts/places.ts";
+    import { tag, placesNearYou } from "/src/lib/stores";
+    import { get } from "svelte/store";
 
     let value = "";
 
@@ -15,9 +15,6 @@
         const dataPlace = data.namePlace;
         (value = data.name), data.namePlace;
     });
-
-    let discoverTag = "tous";
-    let nearYouTag = "tous";
 
     function changeTag(event) {
         tag.set(event.target.innerText.toUpperCase());
@@ -54,8 +51,8 @@
                 <ul><a href="." class="discover__tag" on:click|preventDefault={changeTag} class:selected={$tag === "HISTORIQUE"}>Historique</a></ul>
             </li>
         </div>
-        <div class="places__home hide">
-            <Places />
+        <div class="places__home">
+            <Places data={get(placesNearYou)} />
         </div>
     </section>
 </main>

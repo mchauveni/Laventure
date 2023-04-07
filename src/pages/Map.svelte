@@ -1,16 +1,18 @@
 <script>
     import Footer from "/src/lib/Footer.svelte";
     import Header from "/src/lib/Header.svelte";
+    import { locationButtonClick } from "/src/scripts/places.ts";
+    import "/src/scripts/map.ts";
+
     import placeIcon from "/src/assets/img/icons/place.svg";
     import distanceIcon from "/src/assets/img/icons/distance.svg";
     import playIcon from "/src/assets/img/icons/play.svg";
-    import "/src/scripts/map.ts";
 </script>
 
 <Header />
 <main class="main">
     <h1 class="main__title">Autour de vous</h1>
-    <button class="main__locate" id="askButton"> Activer la localisation </button>
+    <button class="main__locate" id="askButton" on:click={locationButtonClick()}> Activer la localisation </button>
     <section class="maps">
         <div id="map" class="maps__iframe" />
         <div class="popup">

@@ -1,64 +1,49 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const components = document.querySelectorAll(".hide .placeComponent");
+import datas from "/src/scripts/place.json";
+import { placesNearYou } from "/src/lib/stores";
+import { get } from "svelte/store";
 
-  let test1;
 
-  let watchId;
-
-  let distances;
-  let value;
-  let latitude;
-  let longitude;
-  let lat1;
-  let lon2;
-  let d;
-  let result;
-  let maxdist;
-
-  function appendLocation(location, verb) {
-    verb = verb || "updated";
-    value = location.coords;
-    latitude = value.latitude;
-    longitude = value.longitude;
-    distances = [latitude, longitude];
-    components.forEach((component) => {
-      console.log("test");
-      test1 = component.querySelector(".localisationPlace").innerHTML;
-      test1 = test1.split(" ");
-      lat1 = test1[0];
-      lon2 = test1[1];
-      maxdist = 30;
-      result = distance(lat1, lon2, latitude, longitude);
-      if (parseInt(result) < maxdist) {
-        component.classList.add("show");
-      } else {
-        component.classList.remove("show");
-      }
-    });
-  }
-
-  function distance(latbis, lonbis, latitudebis, longitudebis) {
-    var R = 6371;
-    var dLat = ((latitudebis - latbis) * Math.PI) / 180;
-    var dLon = ((longitudebis - lonbis) * Math.PI) / 180;
-    var a =
-      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos((latbis * Math.PI) / 180) *
-        Math.cos((latitudebis * Math.PI) / 180) *
-        Math.sin(dLon / 2) *
-        Math.sin(dLon / 2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    d = R * c;
-    if (d > 1) return Math.floor(d) + " km";
-    else if (d <= 1) return Math.floor(d * 1000) + " m";
-  }
-
+let watchId;
+export function locationButtonClick() {
   if ("geolocation" in navigator) {
-    document.getElementById("askButton").addEventListener("click", function () {
-      navigator.geolocation.getCurrentPosition(function (location) {
-        appendLocation(location, "fetched");
-      });
-      watchId = navigator.geolocation.watchPosition(appendLocation);
+    navigator.geolocation.getCurrentPosition(function (location) {
+      appendLocation;
     });
+    watchId = navigator.geolocation.watchPosition(appendLocation);
   }
-});
+};
+
+
+export function appendLocation(location: GeolocationPosition) {
+  let placesToShow = [];
+  let maxdist = 30;
+  let UserLat = location.coords.latitude;
+  let UserLon = location.coords.longitude;
+
+  datas.places.forEach((place) => {
+    let placeLat = place.placeX;
+    let placeLon = place.placeY;
+    let result = distance(placeLat, placeLon, UserLat, UserLon);
+
+    if (result <= maxdist) {
+      placesToShow.push(place);
+    }
+  });
+
+  placesNearYou.set(placesToShow);
+}
+
+export function distance(lat1: number, long1: number, lat2: number, long2: number) {
+  var R = 6371;
+  var dLat = ((lat2 - lat1) * Math.PI) / 180;
+  var dLon = ((long2 - long1) * Math.PI) / 180;
+  var a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos((lat1 * Math.PI) / 180) *
+    Math.cos((lat2 * Math.PI) / 180) *
+    Math.sin(dLon / 2) *
+    Math.sin(dLon / 2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  let d = R * c;
+  return Math.round(d * 100) / 100;
+}

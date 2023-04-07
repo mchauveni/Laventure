@@ -1,14 +1,15 @@
 <script>
-    import test from "/src/scripts/place.json";
+    import placeDatas from "/src/scripts/place.json";
     import { overlay, focusData, search, tag } from "/src/lib/stores";
     import { fade } from "svelte/transition";
-    import { allLikedPlaces } from "./stores";
+    import { allLikedPlaces, placesNearYou } from "./stores";
     import localisationIcon from "/src/assets/img/icons/location_icon.svg";
     import trashIcon from "/src/assets/img/icons/trash.svg";
     import { displayLikedPlaces } from "/src/scripts/localstorage.ts";
+    import { get } from "svelte/store";
 
     export let showDeleteBtn = false;
-    export let data = undefined || test.places;
+    export let data = undefined || placeDatas.places;
 
     function placeClick(place) {
         overlay.set("focus");
@@ -20,15 +21,6 @@
         place = value;
     });
 
-    /* This is bs. It refresh the place component so it accurately shows the likes. */
-    let visible = true;
-    allLikedPlaces.subscribe((value) => {
-        visible = false;
-        setTimeout(() => {
-            visible = true;
-        }, 50);
-    });
-
     function deleted() {
         const likedPlaces = JSON.parse(localStorage.getItem("places")) || [];
         const index = likedPlaces.indexOf(place.id);
@@ -36,6 +28,27 @@
         localStorage.setItem("places", JSON.stringify(likedPlaces));
         displayLikedPlaces();
     }
+
+    /* This is bs. It refresh the place component so it accurately shows the likes & places near you. */
+    let visible = true;
+    function reload() {
+        visible = false;
+        setTimeout(() => {
+            visible = true;
+        }, 10);
+    }
+    allLikedPlaces.subscribe((value) => {
+        reload();
+    });
+
+    placesNearYou.subscribe((value) => {
+        console.log("Places near you updated ! Reloading ");
+        console.log(get(placesNearYou));
+        console.log(data);
+        reload();
+    });
+
+    console.log(data);
 </script>
 
 {#each data as place}
